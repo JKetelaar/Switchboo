@@ -1,0 +1,321 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 4{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/form4.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
+        </a>
+
+        <form class="form-inline">
+            <a href="{{ path('switch_step', {'step': 2}) }}">
+                <span class="navbar-text">
+                    <span>Back</span>
+                </span>
+            </a>
+        </form>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" id="form-container">
+        {{ form_errors(form) }}
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar active"></div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center" id="step-text">
+                <h5>Wow you can save <span id="save-total">302.71</span> by switching over to <span id="new-supplier">British Gas</span>
+                </h5>
+                <p>This is the cheapest deal available</p>
+            </div>
+        </div>
+
+
+        <!-- end of top bars -->
+
+
+        <!-- main form content -->
+
+        <div class="row">
+            <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
+
+
+                <!-- first question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Seconds away from completing your switch</h5>
+                        <p>Your new supplier needs to know your...</p>
+                    </div>
+
+                    <div class="col-12">
+
+                        <div class="row question-row-inner">
+                            <div class="col-6 col-md-2">
+                                <h6 class="row-title">Title</h6>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <select class="form-control selector">
+                                    <option>mr</option>
+                                    <option>mrs</option>
+                                    <option>miss</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row question-row-inner">
+                            <div class="col-6 col-md-2">
+                                <h6 class="row-title">First name</h6>
+                            </div>
+
+                            <div class="col-12 col-md-5">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+
+                        <div class="row question-row-inner">
+                            <div class="col-6 col-md-2">
+                                <h6 class="row-title">Surname</h6>
+                            </div>
+
+                            <div class="col-12 col-md-5">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+
+                        <div class="row question-row-inner">
+                            <div class="col-12 col-md-2">
+                                <h6 class="row-title">Date of birth</h6>
+                            </div>
+
+                            <div class="col-12 col-md-3">
+                                <input type="text" class="form-control" id="" placeholder="DD/MM/YYYY">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of first question -->
+
+
+                <!-- second question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Incase we ever need to get hold of you</h5>
+                        <p>Don't worry, we will never share your details without your permission</p>
+                    </div>
+
+                    <div class="col-12">
+
+                        <div class="row question-row-inner">
+                            <div class="col-12 col-md-2">
+                                <h6 class="row-title">Phone number</h6>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of second question -->
+
+
+                <!-- third question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Please select your address for <span id="postcode">BH12 1BQ</span></h5>
+                    </div>
+
+                    <div class="col-12">
+
+                        <div class="row question-row-inner">
+                            <div class="col-6 col-md-2">
+                                <h6 class="row-title">Address</h6>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <select class="form-control selector" id="address">
+                                    <option>1 something road</option>
+                                    <option>2 something road</option>
+                                    <option>3 something road</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of third question -->
+
+
+                <!-- fourth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Do you have a smart meter</h5>
+                        <p>Electronic device in your home that records your consumption</p>
+                    </div>
+
+                    <div class="col-6 col-md-2">
+                        <div class="round-button-circle"><a>Yes</a></div>
+                    </div>
+
+                    <div class="col-6 col-md-2">
+                        <div class="round-button-circle active"><a>No</a></div>
+                    </div>
+
+                </div>
+                <!-- end of fourth question -->
+
+
+                <!-- fifth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Is your billing address the same as your supply address</h5>
+                    </div>
+
+                    <div class="col-6 col-md-2">
+                        <div class="round-button-circle active"><a>Yes</a></div>
+                    </div>
+
+                    <div class="col-6 col-md-2">
+                        <div class="round-button-circle"><a>No</a></div>
+                    </div>
+
+                </div>
+                <!-- end of fifth question -->
+
+
+                <!-- sixth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Is there any special requirements in the household</h5>
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        <input type="text" class="form-control" id="" placeholder="optional">
+                    </div>
+
+
+                </div>
+                <!-- end of sixth question -->
+
+
+                <!-- seventh question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Your payment details</h5>
+                        <p>We will never take any money from your bank account for any transaction. Your details will be
+                            held and forwarded securely to your new supplier.</p>
+                    </div>
+
+                </div>
+                <!-- end of seventh question -->
+
+
+                <!-- eigth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Account holders name</h5>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <input type="text" class="form-control" id="">
+                    </div>
+
+                </div>
+                <!-- end of eigth question -->
+
+
+                <!-- ninth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Sort code</h5>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <input type="text" class="form-control" id="">
+                    </div>
+
+
+                </div>
+                <!-- end of ninth question -->
+
+
+                <!-- tenth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Account number</h5>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <input type="text" class="form-control" id="">
+                    </div>
+
+
+                </div>
+                <!-- end of tenth question -->
+
+
+                <!-- direct debit guarantee question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <img src="../images/direct-debit-guarantee.png" class="img-fluid"/>
+                    </div>
+
+
+                </div>
+                <!-- end of direct debit guarantee question -->
+
+
+                <!-- next page button -->
+                <div class="row question-row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
+                        <a href="form-5.html">
+                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SWITCH</span>
+                            </button>
+                        </a>
+                        <p class="next-lower-text">Easypeasy</p>
+                    </div>
+                </div>
+                <!-- end of next page button -->
+            </div>
+        </div>
+        <!-- end of main form content -->
+
+        <!-- start of footer -->
+        <div class="row" id="footer">
+            <div class="col-12 text-center">
+                <h4>If you get stuck, give us a a call on 0800 4211 3213</h4>
+            </div>
+        </div>
+        <!-- end of footer -->
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/forms.js') }}"></script>
+{% endblock %}

@@ -19,6 +19,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class SwitchController extends AbstractController
 {
     /**
+     * @param Request $request
+     * @return RedirectResponse|Response
+     *
+     * @Route("/5", name="switch_step_5")
+     */
+    public function switchStepFive(Request $request)
+    {
+        return $this->render(
+            'switch/step_5.html.twig'
+        );
+    }
+
+    /**
      * @param int $step
      * @param Request $request
      * @return RedirectResponse|Response

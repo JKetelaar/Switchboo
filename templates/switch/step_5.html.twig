@@ -1,0 +1,180 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 5{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/form5.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
+        </a>
+
+        <form class="form-inline">
+            <a href="{{ path('switch_step', {'step': 2}) }}">
+                <span class="navbar-text">
+                    <span>Back</span>
+                </span>
+            </a>
+        </form>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" id="form-container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar active"></div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center" id="step-text">
+                <h5>Congratulations you saved <span id="save-total">302.71</span> by switching over to <span
+                            id="new-supplier">British Gas</span></h5>
+                <p>When that deal ends our system will automatically run another check and switch you to the cheapest
+                    deal.</p>
+            </div>
+        </div>
+
+
+        <!-- end of top bars -->
+
+
+        <!-- main form content -->
+
+        <div class="row">
+            <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
+
+
+                <!-- header -->
+                <div class="row question-row">
+                    <div class="col-12 question-title text-center">
+                        <h5>After Switch FAQs</h5>
+                    </div>
+                </div>
+                <!-- end of header -->
+
+                <!-- first question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>What happens now</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of first question -->
+
+
+                <!-- second question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>Do i need to contact my old supplier</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of second question -->
+
+
+                <!-- third question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>How do i contact switchboo</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of third question -->
+
+
+                <!-- fourth question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>How can i set up a family member or friend</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of fourth question -->
+
+
+                <!-- fifth question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>How long will the switch take</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of fifth question -->
+
+
+                <!-- sixth question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>What happens when my new deal ends</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of sixth question -->
+
+
+                <!-- seventh question -->
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>How will i know who you've switched me too</h5>
+                        <p>sample text sample text sample text sample text sample text sample text sample text sample
+                            text sample text sample text sample text sample text sample text sample text sample text
+                            sample text sample text sample text sample text sample text sample text </p>
+                    </div>
+
+                </div>
+                <!-- end of seventh question -->
+            </div>
+        </div>
+        <!-- end of main form content -->
+
+        <!-- start of footer -->
+        <div class="row" id="footer">
+            <div class="col-12 text-center">
+                <h4>If you get stuck, give us a a call on 0800 4211 3213</h4>
+            </div>
+        </div>
+        <!-- end of footer -->
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/forms.js') }}"></script>
+{% endblock %}
