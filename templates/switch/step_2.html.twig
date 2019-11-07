@@ -70,7 +70,7 @@
 
                             <div class="col-1">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="customRadio"
+                                    <input type="radio" id="customRadio1" name="gasType"
                                            class="custom-control-input" checked>
                                     <label class="custom-control-label" for="customRadio1"></label>
                                 </div>
@@ -82,7 +82,7 @@
 
                             <div class="col-5 col-md-3 col-lg-3 num-input">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="£">
+                                    {{ form_widget(form.gasMoneySpend) }}
                                 </div>
                             </div>
 
@@ -93,11 +93,7 @@
                             </div>
 
                             <div class="col-5 col-md-4 col-lg-3 duration-selector">
-                                <select class="form-control selector">
-                                    <option>week</option>
-                                    <option>month</option>
-                                    <option>year</option>
-                                </select>
+                                {{ form_widget(form.gasMoneyPerType) }}
                             </div>
                         </div>
 
@@ -105,7 +101,7 @@
 
                             <div class="col-1">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="customRadio"
+                                    <input type="radio" id="customRadio2" name="gasType"
                                            class="custom-control-input">
                                     <label class="custom-control-label" for="customRadio2"></label>
                                 </div>
@@ -117,7 +113,7 @@
 
                             <div class=" col-5 col-md-3 num-input">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="kWH">
+                                    {{ form_widget(form.gasUseKWH) }}
                                 </div>
                             </div>
 
@@ -149,7 +145,7 @@
 
                             <div class="col-1">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio3" name="customRadio1"
+                                    <input type="radio" id="customRadio3" name="elec"
                                            class="custom-control-input" checked>
                                     <label class="custom-control-label" for="customRadio3"></label>
                                 </div>
@@ -161,7 +157,7 @@
 
                             <div class="col-5 col-md-3 col-lg-3 num-input">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="£">
+                                    {{ form_widget(form.elecMoneySpend) }}
                                 </div>
                             </div>
 
@@ -172,11 +168,7 @@
                             </div>
 
                             <div class="col-5 col-md-4 col-lg-3 duration-selector">
-                                <select class="form-control selector">
-                                    <option>week</option>
-                                    <option>month</option>
-                                    <option>year</option>
-                                </select>
+                                {{ form_widget(form.elecMoneyPerType) }}
                             </div>
                         </div>
 
@@ -184,7 +176,7 @@
 
                             <div class="col-1">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio4" name="customRadio1"
+                                    <input type="radio" id="customRadio4" name="elecType"
                                            class="custom-control-input">
                                     <label class="custom-control-label" for="customRadio4"></label>
                                 </div>
@@ -196,7 +188,7 @@
 
                             <div class="col-5 col-md-3 num-input">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="kWH">
+                                    {{ form_widget(form.elecUseKWH) }}
                                 </div>
                             </div>
 

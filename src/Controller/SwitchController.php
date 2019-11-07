@@ -52,6 +52,9 @@ class SwitchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $quote = $form->getData();
 
+            var_dump($quote);
+            die();
+
             $this->getDoctrine()->getManager()->persist($quote);
             $this->getDoctrine()->getManager()->flush();
 
