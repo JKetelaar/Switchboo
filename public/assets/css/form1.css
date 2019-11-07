@@ -1,0 +1,237 @@
+@font-face {
+    font-family: "fsjoey";
+    src: url("../vendor/fonts/FSJoeyTrial-Regular.otf") format("opentype");   
+}
+
+@font-face {
+    font-family: "fsjoeyBold";
+    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyHeavy";
+    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyMedium";
+    src: url("../vendor/fonts/FSJoeyTrial-Medium.otf") format("opentype");
+}
+
+
+@font-face {
+    font-family: "fsjoeyMediumItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyBoldItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-BoldItalic.otf") format("opentype");
+}
+
+
+.type-button {
+    width: 100%;
+    height: calc(1.8em + .75rem + 2px);
+    background-color: #f7f7f7;
+    color: black;
+    border: none !Important;
+    font-family: "fsjoeyHeavy";
+    margin-bottom: 10px;
+}
+
+.type-button.active {
+    background-color: #ff0a9a !Important;
+    color: white;
+}
+
+.type-button:hover {
+    background-color: #ff0a9a !Important;
+}
+
+.type-button:focus {
+    box-shadow: none !Important;
+}
+
+
+.supplier-container {
+    margin-bottom: 20px;
+}
+
+.supplier-image {
+    background-color: #f7f7f7;
+    height: 100px;
+    padding: 8%;
+    border-radius: 8px;
+    border-width: 5px;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.supplier-image.active {
+    padding: 8%;
+    border-color: #ff0a9a;
+    background-color: white;
+}
+
+.supplier-image div {     
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+#supplier-british-gas {
+    background-image: url('../images/British-gas.png');
+}
+
+#supplier-eon {
+    background-image: url('../images/EON.png');
+}
+
+#supplier-edf {
+    background-image: url('../images/EDF.png');
+}
+
+#supplier-npower {
+    background-image: url('../images/npower.png');
+}
+
+#supplier-scottish-power {
+    background-image: url('../images/Scottish-Power.png');
+}
+
+#supplier-sse {
+    background-image: url('../images/SSE.png');
+}
+
+
+.control-label {
+    font-family: "fsjoey";
+}
+
+
+#plan-or {
+    font-family: "fsjoey";
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 575.98px) {
+    
+    #plan-or {
+        font-family: "fsjoey";
+        font-size: 20px;
+    }
+    
+    #plan-circle {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 0px !Important;
+    }
+    
+    #plan-circle .round-button-circle {
+        font-size: 15px !Important;
+    }
+      
+}
+
+
+@media (min-width: 576px) and (max-width: 768.98px) {
+    
+    #plan-circle {
+        margin-top: -3%;
+        font-size: 13px;
+    }
+    
+    #plan-or {
+        font-size: 24px;
+    }
+
+          
+}
+
+
+@media (min-width: 768.99px) and (max-width: 991.98px) {
+    
+    #plan-circle {
+        margin-top: -3%;
+    }
+    
+    #plan-or {
+        margin-top: 5px;
+    }
+    
+}
+
+
+
+@media (min-width: 991.99px) and (max-width: 1199.98px) { 
+    
+    #plan-or {
+        font-size: 24px;
+    }
+    
+    #plan-circle {
+        font-size: 14px;
+        margin-top: -3%;
+    }
+    
+}
+
+
+@media (min-width: 1199.99px) and (max-width: 1400px) {
+    
+    #plan-or {
+        font-size: 25px;
+    }
+    
+    #plan-circle {
+        margin-top: -2%;
+    }
+     
+}
+
+
+
+@media (min-width: 1400.1px) {
+    
+    #plan-or {
+        font-size: 25px;
+    }
+    
+    #plan-circle {
+        margin-top: -4%;
+    }
+    
+}

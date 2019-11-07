@@ -1,0 +1,144 @@
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #ff0a9a;
+    background-color: #ff0a9a;
+}
+
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+    color: #fff;
+    background-color: #ff0a9a;
+    border-color: #ff0a9a;
+}
+
+
+.custom-control-label::before {
+    border: #ff0a9a;
+    background-color: #f7f7f7;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #ff0a9a;
+    background-color: #ff0a9a;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none !Important
+}
+
+
+
+.selector {
+    background-position: 90% 50% !Important;
+    background-size: 7.5% !Important;
+}
+
+.radio-fix {
+    padding-left: 15%;
+}
+
+
+input {
+    border-color: #dcd5d5 !Important;
+    border-width: 2px !Important;
+}
+
+.form-split {
+        margin-top: 25px;
+}
+
+input {
+    margin-top: -6% !Important;
+}
+
+select {
+    margin-top: -4% !Important;
+}
+
+
+.payment-type {
+    background-position: 90% 50% !Important;
+    background-size: 4.5% !Important;
+}
+
+@media (max-width: 575.98px) {
+    
+    .d-hide {
+        display: block;
+    }
+
+    input,select {
+        margin-top: -9% !Important;
+        height: calc(1em + .75rem + 2px) !Important;
+        padding: 0rem .75rem !Important;
+    }
+    
+    .form-per {
+        margin-top: -4px;
+    }
+    
+    .per-year {
+        margin-top: -15px;
+    } 
+    
+}
+
+@media (min-width: 575.99px) {
+    
+    .d-hide {
+        display: none !Important;
+    }
+}
+
+
+@media (min-width: 991.99px) and (max-width: 1399px) {
+    
+    
+    .num-input {
+        margin-left: -7%;
+    }
+    
+    .per-container {
+        margin-left: -2%;
+    }
+    
+    .duration-selector {
+        margin-left: -2%;
+        margin-top: -0.3%;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    
+    
+    input {
+        margin-top: -4% !Important;
+    }
+    
+    
+    .num-input {
+        margin-left: -10%;
+    }
+    
+    .per-container {
+        margin-left: -2%;
+    }
+    
+    .duration-selector {
+        margin-left: -4%;
+        margin-top: 0% !important;
+    }
+}
+
+
+
+
+
+
+
+
+

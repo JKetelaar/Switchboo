@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "fsjoeyBold";
+    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyHeavy";
+    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
+}
+
+
+.question-row {
+    margin-bottom: 50px;
+}
+
+.question-row-inner {
+    margin-bottom: 30px;
+}
+
+.row-title {
+    font-family: "fsjoeyHeavy";
+}
+
+#postcode {
+    color: #ff0a9a;
+    font-size: 1.2rem;
+}
+
+
+select {
+    margin-top: -2%;
+}
+
+
+input {
+    margin-top: -3%;
+    border-color: #dcd5d5 !Important;
+    border-width: 2px !Important;
+    font-family: "fsjoey" !Important;
+}
+
+.form-control:focus {
+    box-shadow: none !Important;
+}
+
+

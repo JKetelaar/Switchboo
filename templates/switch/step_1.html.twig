@@ -1,0 +1,228 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 1{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/form1.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
+        </a>
+
+        <form class="form-inline">
+            <a href="{{ path('home') }}">
+                <span class="navbar-text">
+                    <span>Back</span>
+                </span>
+            </a>
+        </form>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" id="form-container">
+        {{ form_errors(form) }}
+        <!-- start of top bars -->
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+
+                <div class="step-bar active"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center" id="step-text">
+                <h5>You're a few questions away from saving money on your energy bills</h5>
+                <p>Don't worry our service is free and it will only take 2 minutes</p>
+            </div>
+        </div>
+        <!-- end of top bars -->
+
+        <!-- main form content -->
+        <div class="row">
+            <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
+                {{ form_start(form) }}
+
+                <div class="row question-row">
+
+                    <div class="col-12 question-title">
+                        <h5>{{ form_label(form.gasElectricityType) }}</h5>
+                    </div>
+
+                    <div class="btn-group btn-group-toggle" style="padding-left: 15px; padding-right: 15px; width: 100%"
+                         data-toggle="buttons">
+                        <label class="btn btn-primary type-button active">
+                            <input type="radio" name="quote_step_one[gasElectricityType]" value="1" checked>
+                            Gas and Electricity
+                        </label>
+                        <label class="btn btn-primary type-button">
+                            <input type="radio" name="quote_step_one[gasElectricityType]" value="2"> Gas only
+                        </label>
+                        <label class="btn btn-primary type-button">
+                            <input type="radio" name="quote_step_one[gasElectricityType]" value="3">
+                            Electricity only
+                        </label>
+                    </div>
+                </div>
+
+                <!-- second question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Do you have the same supplier for Gas and Electricity</h5>
+                        <p>This is called a Dual Fuel tariff</p>
+                    </div>
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary type-button active"
+                               style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle; margin-right: 50px;">
+                            <input type="radio" name="quote_step_one[sameSupplier]" value="1" checked>
+                            <span style="line-height: 111px;">Yes</span>
+                        </label>
+                        <label class="btn btn-primary type-button"
+                               style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle">
+                            <input type="radio" name="quote_step_one[sameSupplier]" value="0">
+                            <span style="line-height: 111px;">No</span>
+                        </label>
+                    </div>
+
+                </div>
+                <!-- end of second question -->
+
+                <!-- third question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Who is your energy supplier</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image active">
+                            <div id="supplier-british-gas"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-eon"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-edf"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-npower"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-scottish-power"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-sse"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="control-label">Can't see your supplier? Click here</p>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+
+                        <div class="form-group">
+                            {{ form_widget(form.energySupplier) }}
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of third question -->
+
+                <!-- fourth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Which plan are you on</h5>
+                        <p>You can find this on an old bill</p>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+                        <div class="form-group">
+                            {{ form_widget(form.plan) }}
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-10 offset-sm-1 col-md-1 offset-md-0 text-center" id="plan-or">
+                        <p>or</p>
+                    </div>
+
+                    <div class="col-8 offset-2 offset-md-0 col-md-2" id="plan-circle">
+                        <div class="round-button-circle"><a>Not sure</a></div>
+                    </div>
+
+                </div>
+                <!-- end of fourth question -->
+
+                <!-- fifth question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Do you have an Economy 7 Meter</h5>
+                        <p>If you're not sure what this is, you probably don't</p>
+                    </div>
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary type-button active"
+                               style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle; margin-right: 50px;">
+                            <input type="radio" name="quote_step_one[economyMeter]" value="1" checked>
+                            <span style="line-height: 111px;">Yes</span>
+                        </label>
+                        <label class="btn btn-primary type-button"
+                               style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle">
+                            <input type="radio" name="quote_step_one[sameSupplier]" value="0">
+                            <span style="line-height: 111px;">No</span>
+                        </label>
+                    </div>
+
+                </div>
+                <!-- end of fifth question -->
+
+                <!-- next page button -->
+                <div class="row question-row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
+                        {{ form_widget(form.submit) }}
+                        <p class="next-lower-text">You're almost there!</p>
+                    </div>
+                </div>
+                <!-- end of next page button -->
+
+
+                {{ form_end(form, {'render_rest': false}) }}
+            </div>
+        </div>
+        <!-- end of main form content -->
+
+        <!-- start of footer -->
+        <div class="row" id="footer">
+            <div class="col-12 text-center">
+                <h4>If you get stuck, give us a a call on 0800 4211 3213</h4>
+            </div>
+        </div>
+        <!-- end of footer -->
+
+    </div>
+{% endblock %}

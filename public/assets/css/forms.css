@@ -1,0 +1,313 @@
+@font-face {
+    font-family: "fsjoey";
+    src: url("../vendor/fonts/FSJoeyTrial-Regular.otf") format("opentype");   
+}
+
+@font-face {
+    font-family: "fsjoeyBold";
+    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyHeavy";
+    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyMedium";
+    src: url("../vendor/fonts/FSJoeyTrial-Medium.otf") format("opentype");
+}
+
+
+@font-face {
+    font-family: "fsjoeyMediumItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyBoldItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-BoldItalic.otf") format("opentype");
+}
+
+
+.navbar.bg-light {
+    height: 120px;
+    background-color: #ff0a9a !Important;
+}
+
+.navbar-text {
+    padding-right: 7.2rem;
+    color: white !Important;
+    font-family: "fsjoeyHeavy"
+}
+
+.navbar-brand {
+    padding-left: 7.2rem;
+}
+
+
+#form-container {
+    background-color: #f7f7f7 !Important;
+    padding-top: 35px;
+    padding-bottom: 200px;
+}
+
+
+.step-bar {
+    height: 10px;
+    background-color: #e4e4e4;
+    width: 18%;
+    margin-left: 1.2%;
+    margin-right: 1.2%;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.step-bar.active {
+    background-color: #ff0a9a;
+}
+
+
+#step-text {
+    margin-top: 45px;
+}
+
+#step-text h5 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-family: "fsjoeyMedium";
+}
+
+
+#step-text p {
+    font-family: "fsjoey";
+    font-size: 1.23rem;
+}
+
+#form-control {
+    background-color: white;
+}
+
+
+#footer {
+    display: none !Important;
+    font-family: "fsjoeyHeavy";
+    color: white;
+    background-color: #ff0a9a;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+#form-control {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 0px
+}
+
+.question-row {
+    margin-bottom: 40px;
+}
+
+.question-title {
+    margin-bottom: 10px;
+    font-family: "fsjoeyHeavy";
+}
+
+.question-title p {
+    font-family: "fsjoey";
+}
+
+
+.round-button-circle:hover {
+    cursor:pointer;
+}
+
+.round-button-circle.active {
+    background: #ff0a9a;
+    color: white !Important;
+}
+
+.round-button-circle {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f7f7f7;
+}
+.round-button-circle a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:50%;
+    padding-bottom:50%;
+	line-height:1em;
+	margin-top:-0.5em; 
+	text-align:center;
+	color: black;
+    font-family:"fsjoeyBold";
+    font-size:1.2em;
+}
+
+.selector {
+    border-color: #dcd5d5;
+    border-width: 2px;
+    font-family: "fsjoey";
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../images/grey-arrow.png);
+    background-position: 90% 60%;
+    background-repeat: no-repeat;
+    background-size: 4.5%;
+}
+
+select::-ms-expand { 
+    display: none; /* remove default arrow on ie10 and ie11 */
+}
+
+
+.black-button {
+    width: 100%;
+    height: calc(2.2em + .75rem + 2px);
+    background-color: black;
+    border-radius: 0px;
+    border: none;
+    font-family: "fsjoeyBoldItalic";
+}
+
+.black-button:hover {
+    border-color: transparent;
+    border-width: 0px !Important;
+    color: white;
+    background-color: black;
+}
+
+.white-underline:hover {
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    background-color: black;
+}
+
+.next-lower-text {
+    margin-top: 15px;
+    font-family: "fsjoey";
+    font-size: 1rem;
+}
+
+.bold {
+    font-family: "fsjoeyHeavy";
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #000000;
+    border-color: #005cbf00;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none !important;
+}
+
+
+#save-total, #new-supplier {
+    color: #ff0a9a;
+    font-size: 1.4rem;
+}
+
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    } 
+}
+
+.selector:focus {
+    border-color: #dcd5d5;
+    border-width: 2px;
+    color: black;
+    box-shadow: none !Important
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    
+    .navbar-text {
+        padding-right: 2rem;
+    }
+
+    .navbar-brand {
+        padding-left: 2rem;
+        width: 45%;
+    }
+
+}
+
+
+
+@media (min-width: 576px) and (max-width: 768.98px) {
+    
+    .navbar-brand {
+        width: 35%;
+    }
+
+          
+}
+
+
+@media (min-width: 768.99px) and (max-width: 1199.98px) {
+    
+    .navbar-brand {
+        width: 30%;
+    }
+    
+}
+
+
+
+
+@media (min-width: 1199.99px) and (max-width: 1799px) {
+    
+    .navbar-brand {
+        width: 20%;
+    }
+    
+    .round-button-circle {
+        width: 70%;
+        padding-bottom: 70%;
+    }
+    
+    
+    .selector {
+        background-position: 95% 60%;
+        background-size: 2.5%;
+    }
+     
+}
+
+
+
+@media (min-width: 1800.1px) {
+    
+    .navbar-brand {
+        width: 15%;
+    }
+    
+    .round-button-circle {
+        width: 70%;
+        padding-bottom: 70%;
+    }
+    
+    .selector {
+        background-position: 95% 60%;
+        background-size: 2.5%;
+    }
+    
+}
+

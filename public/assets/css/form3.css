@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "fsjoey";
+    src: url("../vendor/fonts/FSJoeyTrial-Regular.otf") format("opentype");   
+}
+
+@font-face {
+    font-family: "fsjoeyBold";
+    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyHeavy";
+    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyMediumItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "fsjoeyBoldItalic";
+    src: url("../vendor/fonts/FSJoeyTrial-BoldItalic.otf") format("opentype");
+}
+
+#view-more {
+    font-family: "fsjoeyMediumItalic";
+    cursor: pointer;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.result-row {
+    border-style: solid;
+    border-width: 6px;
+    border-color: #ff0a9a;
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 50px;
+}
+
+.result-row:hover {
+    cursor: pointer;
+}
+
+
+.column-title {
+    font-family: "fsjoeyHeavy";
+    font-size: 1.2rem;
+}
+
+.column-inner-text {
+    font-family: "fsjoey"
+}
+
+.r-m-bottom {
+    margin-bottom: -0.8vh;
+}
+
+.column-price-value {
+    font-family: "fsjoeyHeavy";
+    color: #ff0a9a;
+}
+
+.column-price-button {
+    font-family: "fsjoeyHeavy";
+    color: black;
+}
+
+.column-price-button.active {
+    color: #ff0a9a !Important;
+}
+
+.column-price-value {
+    margin-bottom: 2rem;
+}
+
+
+#british-gas {
+    background-image: url(../images/British-gas.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    height: 80px;
+}
+
+#SSE {
+    background-image: url(../images/SSE.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    height: 80px;
+}
+
+#EDF {
+    background-image: url(../images/EDF.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    height: 80px;
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    
+    .column-title {
+        margin-top: 20px;
+    }
+    
+    
+    #british-gas {
+        background-position: center;
+    }
+    
+    .supplier-title {
+        display: none;
+    }
+    
+}
+
+
+
+
+
+@media (min-width: 767.99px) and (max-width: 870px) {
+    
+    .column-inner-text {
+        font-size: 0.8rem;
+    }
+    
+    .r-m-bottom {
+        margin-bottom: -0.4vh;
+    }
+    
+}
