@@ -79,7 +79,7 @@ class QuoteStepOneType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class' => Quote::class,
-                'csrf_protection' => false
+                'csrf_protection' => false,
             ]
         );
     }
