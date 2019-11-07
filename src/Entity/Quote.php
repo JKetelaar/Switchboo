@@ -61,6 +61,36 @@ class Quote
      */
     private $planNotSure;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $gasMoneySpend;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $gasMoneyPerType;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $gasUseKWH;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $elecMoneySpend;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $elecMoneyPerType;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $elecUseKWH;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -184,5 +214,77 @@ class Quote
         if ($supplier !== null) {
             return $this->setEnergySupplier($supplier);
         }
+    }
+
+    public function getGasMoneySpend(): ?float
+    {
+        return $this->gasMoneySpend;
+    }
+
+    public function setGasMoneySpend(?float $gasMoneySpend): self
+    {
+        $this->gasMoneySpend = $gasMoneySpend;
+
+        return $this;
+    }
+
+    public function getGasMoneyPerType(): ?string
+    {
+        return $this->gasMoneyPerType;
+    }
+
+    public function setGasMoneyPerType(?string $gasMoneyPerType): self
+    {
+        $this->gasMoneyPerType = $gasMoneyPerType;
+
+        return $this;
+    }
+
+    public function getGasUseKWH(): ?float
+    {
+        return $this->gasUseKWH;
+    }
+
+    public function setGasUseKWH(?float $gasUseKWH): self
+    {
+        $this->gasUseKWH = $gasUseKWH;
+
+        return $this;
+    }
+
+    public function getElecMoneySpend(): ?float
+    {
+        return $this->elecMoneySpend;
+    }
+
+    public function setElecMoneySpend(?float $elecMoneySpend): self
+    {
+        $this->elecMoneySpend = $elecMoneySpend;
+
+        return $this;
+    }
+
+    public function getElecMoneyPerType(): ?string
+    {
+        return $this->elecMoneyPerType;
+    }
+
+    public function setElecMoneyPerType(?string $elecMoneyPerType): self
+    {
+        $this->elecMoneyPerType = $elecMoneyPerType;
+
+        return $this;
+    }
+
+    public function getElecUseKWH(): ?float
+    {
+        return $this->elecUseKWH;
+    }
+
+    public function setElecUseKWH(?float $elecUseKWH): self
+    {
+        $this->elecUseKWH = $elecUseKWH;
+
+        return $this;
     }
 }
