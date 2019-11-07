@@ -22,9 +22,21 @@ class SwitchController extends AbstractController
      * @param Request $request
      * @return RedirectResponse|Response
      *
-     * @Route("/1", name="switch_step_1")
+     * @Route("/{step}", name="switch_step")
      */
-    public function index(Request $request)
+    public function switchStep(Request $request)
+    {
+        return $this->nextStep($request, 1, 2, QuoteStepOneType::class);
+    }
+
+    /**
+     * @param Request $request
+     * @param int $currentStep
+     * @param int $nextStep
+     * @param string $formClass
+     * @return RedirectResponse|Response
+     */
+    private function nextStep(Request $request, int $currentStep, int $nextStep, string $formClass)
     {
         if (($quote = $this->getQuote($request)) === null) {
             return $this->redirectToHome();
@@ -39,14 +51,11 @@ class SwitchController extends AbstractController
             $this->getDoctrine()->getManager()->persist($quote);
             $this->getDoctrine()->getManager()->flush();
 
-            var_dump($quote);
-            die();
-
-            return $this->redirectToRoute('switch_step_2');
+            return $this->redirectToRoute('switch_step_'.$nextStep);
         }
 
         return $this->render(
-            'switch/step_1.html.twig',
+            'switch/step_'.$currentStep.'.html.twig',
             [
                 'form' => $form->createView(),
             ]
