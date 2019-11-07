@@ -41,7 +41,7 @@ class HomeController extends AbstractController
 
             $this->get('session')->set('quote', $quote->getId());
 
-            return $this->redirectToRoute('switch_step_1');
+            return $this->redirectToRoute('switch_step', ['step' => 1]);
         }
 
         return $this->render(
