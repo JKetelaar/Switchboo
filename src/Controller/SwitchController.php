@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Quote;
-use App\Form\QuoteStepOneType;
+use NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,14 +19,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class SwitchController extends AbstractController
 {
     /**
+     * @param int $step
      * @param Request $request
      * @return RedirectResponse|Response
      *
      * @Route("/{step}", name="switch_step")
      */
-    public function switchStep(Request $request)
+    public function switchStep(int $step, Request $request)
     {
-        return $this->nextStep($request, 1, 2, QuoteStepOneType::class);
+        $numberFormatter = new NumberFormatter('en', NumberFormatter::SPELLOUT);
+        $stepFormType = 'App\Form\QuoteStep'.ucfirst($numberFormatter->format($step)).'Type';
+
+        return $this->nextStep($request, $step, $step + 1, $stepFormType);
     }
 
     /**
@@ -42,7 +46,7 @@ class SwitchController extends AbstractController
             return $this->redirectToHome();
         }
 
-        $form = $this->createForm(QuoteStepOneType::class, $quote);
+        $form = $this->createForm($formClass, $quote);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -51,7 +55,7 @@ class SwitchController extends AbstractController
             $this->getDoctrine()->getManager()->persist($quote);
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('switch_step_'.$nextStep);
+            return $this->redirectToRoute('switch_step', ['step' => $nextStep]);
         }
 
         return $this->render(

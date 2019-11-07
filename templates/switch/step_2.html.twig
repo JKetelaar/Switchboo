@@ -1,0 +1,268 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 2{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/form1.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block navigation %}
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">
+            <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
+        </a>
+
+        <form class="form-inline">
+            <a href="{{ path('switch_step', {'step': 1}) }}">
+                <span class="navbar-text">
+                    <span>Back</span>
+                </span>
+            </a>
+        </form>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" id="form-container">
+        {{ form_errors(form) }}
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+
+                <div class="step-bar"></div>
+                <div class="step-bar active"></div>
+                <div class="step-bar"></div>
+                <div class="step-bar"></div>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center" id="step-text">
+                <h5>You're a few questions away from saving money on your energy bills</h5>
+                <p>Don't worry our service is free and it will only take 2 minutes</p>
+            </div>
+        </div>
+
+
+        <!-- end of top bars -->
+
+
+        <!-- main form content -->
+
+        <div class="row">
+            <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
+                {{ form_start(form) }}
+
+
+                <!-- first question -->
+                <div class="row question-row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 question-title">
+                                <h5>How much gas do you use</h5>
+                                <p>Please select one of the options</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-1">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="customRadio"
+                                           class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio1"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-5 col-md-2 col-lg-2">
+                                <h6 class="bold">I spend</h6>
+                            </div>
+
+                            <div class="col-5 col-md-3 col-lg-3 num-input">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="" placeholder="£">
+                                </div>
+                            </div>
+
+
+                            <div class="col-1 d-hide"></div>
+                            <div class="col-5 col-md-1 col-lg-1 per-container">
+                                <h6 class="bold form-per">per</h6>
+                            </div>
+
+                            <div class="col-5 col-md-4 col-lg-3 duration-selector">
+                                <select class="form-control selector">
+                                    <option>week</option>
+                                    <option>month</option>
+                                    <option>year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row form-split">
+
+                            <div class="col-1">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="customRadio"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio2"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-5 col-md-2">
+                                <h6 class="bold">I use</h6>
+                            </div>
+
+                            <div class=" col-5 col-md-3 num-input">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="" placeholder="kWH">
+                                </div>
+                            </div>
+
+
+                            <div class="col-1 d-hide"></div>
+                            <div class="col-10 col-md-6 per-container">
+                                <h6 class="bold per-year">per year</h6>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of first question -->
+
+
+                <!-- second question -->
+                <div class="row question-row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 question-title">
+                                <h5>How much electricity do you use</h5>
+                                <p>Please select one of the options</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-1">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio3" name="customRadio1"
+                                           class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio3"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-5 col-md-2 col-lg-2">
+                                <h6 class="bold">I spend</h6>
+                            </div>
+
+                            <div class="col-5 col-md-3 col-lg-3 num-input">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="" placeholder="£">
+                                </div>
+                            </div>
+
+
+                            <div class="col-1 d-hide"></div>
+                            <div class="col-5 col-md-1 col-lg-1 per-container">
+                                <h6 class="bold form-per">per</h6>
+                            </div>
+
+                            <div class="col-5 col-md-4 col-lg-3 duration-selector">
+                                <select class="form-control selector">
+                                    <option>week</option>
+                                    <option>month</option>
+                                    <option>year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row form-split">
+
+                            <div class="col-1">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio4" name="customRadio1"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-5 col-md-2">
+                                <h6 class="bold">I use</h6>
+                            </div>
+
+                            <div class="col-5 col-md-3 num-input">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="" placeholder="kWH">
+                                </div>
+                            </div>
+
+
+                            <div class="col-1 d-hide"></div>
+                            <div class="col-10 col-md-6 per-container">
+                                <h6 class="bold per-year">per year</h6>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of second question -->
+
+
+                <!-- third question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>How do you pay for your energy</h5>
+                        <p>Please select your payment type</p>
+                    </div>
+
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+                        <div class="form-group">
+                            {{ form_widget(form.paymentType) }}
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of third question -->
+
+
+                <!-- next page button -->
+                <div class="row question-row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
+                        <a href="form-3.html">
+                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SEE RESULTS</span>
+                            </button>
+                        </a>
+                        <p class="next-lower-text">Nice one, let's see your results</p>
+                    </div>
+                </div>
+                <!-- end of next page button -->
+
+                {{ form_end(form, {'render_rest': false}) }}
+            </div>
+        </div>
+
+        <!-- end of main form content -->
+
+
+        <!-- start of footer -->
+
+        <div class="row" id="footer">
+            <div class="col-12 text-center">
+                <h4>If you get stuck, give us a a call on 0800 4211 3213</h4>
+            </div>
+        </div>
+        <!-- end of footer -->
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/forms.js') }}"></script>
+{% endblock %}
