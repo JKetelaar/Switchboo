@@ -28,7 +28,6 @@ class QuoteStepTwoType extends AbstractType
                     ],
                 ]
             )
-
             ->add(
                 'gasMoneySpend',
                 NumberType::class,
@@ -52,7 +51,6 @@ class QuoteStepTwoType extends AbstractType
                 NumberType::class,
                 ['attr' => ['class' => 'form-control', 'placeholder' => 'kWH'], 'required' => false]
             )
-
             ->add(
                 'elecMoneySpend',
                 NumberType::class,
@@ -76,7 +74,6 @@ class QuoteStepTwoType extends AbstractType
                 NumberType::class,
                 ['attr' => ['class' => 'form-control', 'placeholder' => 'kWH'], 'required' => false]
             )
-
             ->add(
                 'submit',
                 SubmitType::class,

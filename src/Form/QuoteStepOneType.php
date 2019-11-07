@@ -71,8 +71,7 @@ class QuoteStepOneType extends AbstractType
                 'submit',
                 SubmitType::class,
                 ['attr' => ['class' => 'btn btn-primary black-button'], 'label' => 'NEXT PAGE']
-            )
-        ;
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)
