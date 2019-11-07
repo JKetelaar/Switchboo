@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-4 supplier-container">
-                        <div class="supplier-image active">
+                        <div class="supplier-image">
                             <div id="supplier-british-gas"></div>
                         </div>
                     </div>
@@ -150,6 +150,8 @@
                         </div>
 
                     </div>
+
+                    <input type="text" hidden name="quote_step_one[energySupplierImage]" id="hiddenImageSelection">
 
                 </div>
                 <!-- end of third question -->
@@ -225,4 +227,8 @@
         <!-- end of footer -->
 
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/forms.js') }}"></script>
 {% endblock %}

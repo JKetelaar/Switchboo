@@ -48,6 +48,7 @@ class QuoteStepOneType extends AbstractType
                     ],
                 ]
             )
+            ->add('energySupplierImage')
             ->add(
                 'plan',
                 ChoiceType::class,

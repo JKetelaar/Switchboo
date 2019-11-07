@@ -173,4 +173,16 @@ class Quote
 
         return $this;
     }
+
+    public function getEnergySupplierImage()
+    {
+        return $this->energySupplier;
+    }
+
+    public function setEnergySupplierImage($supplier)
+    {
+        if ($supplier !== null) {
+            return $this->setEnergySupplier($supplier);
+        }
+    }
 }
