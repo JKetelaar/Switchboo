@@ -59,15 +59,18 @@
 
                     <div class="btn-group btn-group-toggle" style="padding-left: 15px; padding-right: 15px; width: 100%"
                          data-toggle="buttons">
-                        <label class="btn btn-primary type-button active">
-                            <input type="radio" name="quote_step_one[gasElectricityType]" value="1" checked>
+                        <label class="btn btn-primary type-button {% if form.gasElectricityType.vars.value == '1' %}active{% endif %}">
+                            <input type="radio" name="quote_step_one[gasElectricityType]" value="1"
+                                   {% if form.gasElectricityType.vars.value == '1' %}checked{% endif %}>
                             Gas and Electricity
                         </label>
-                        <label class="btn btn-primary type-button">
-                            <input type="radio" name="quote_step_one[gasElectricityType]" value="2"> Gas only
+                        <label class="btn btn-primary type-button {% if form.gasElectricityType.vars.value == '2' %}active{% endif %}">
+                            <input type="radio" name="quote_step_one[gasElectricityType]" value="2"
+                                   {% if form.gasElectricityType.vars.value == '2' %}checked{% endif %}> Gas only
                         </label>
-                        <label class="btn btn-primary type-button">
-                            <input type="radio" name="quote_step_one[gasElectricityType]" value="3">
+                        <label class="btn btn-primary type-button {% if form.gasElectricityType.vars.value == '3' %}checked{% endif %}">
+                            <input type="radio" name="quote_step_one[gasElectricityType]"
+                                   value="3 {% if form.gasElectricityType.vars.value == '3' %}checked{% endif %}">
                             Electricity only
                         </label>
                     </div>
