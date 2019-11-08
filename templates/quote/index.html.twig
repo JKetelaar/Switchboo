@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quote index{% endblock %}
+
+{% block body %}
+    <h1>Quote index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Postcode</th>
+            <th>Email</th>
+            <th>GasElectricityType</th>
+            <th>SameSupplier</th>
+            <th>EnergySupplier</th>
+            <th>Plan</th>
+            <th>EconomyMeter</th>
+            <th>PaymentType</th>
+            <th>GasMoneySpend</th>
+            <th>GasMoneyPerType</th>
+            <th>GasUseKWH</th>
+            <th>ElecMoneySpend</th>
+            <th>ElecMoneyPerType</th>
+            <th>ElecUseKWH</th>
+            <th>ChosenSupplier</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for quote in quotes %}
+            <tr>
+                <td>{{ quote.id }}</td>
+                <td>{{ quote.postcode }}</td>
+                <td>{{ quote.email }}</td>
+                <td>{{ quote.gasElectricityType }}</td>
+                <td>{{ quote.sameSupplier ? 'Yes' : 'No' }}</td>
+                <td>{{ quote.energySupplier }}</td>
+                <td>{{ quote.plan }}</td>
+                <td>{{ quote.economyMeter ? 'Yes' : 'No' }}</td>
+                <td>{{ quote.paymentType }}</td>
+                <td>{{ quote.gasMoneySpend }}</td>
+                <td>{{ quote.gasMoneyPerType }}</td>
+                <td>{{ quote.gasUseKWH }}</td>
+                <td>{{ quote.elecMoneySpend }}</td>
+                <td>{{ quote.elecMoneyPerType }}</td>
+                <td>{{ quote.elecUseKWH }}</td>
+                <td>{{ quote.chosenSupplier }}</td>
+                <td>
+                    <a href="{{ path('quote_show', {'id': quote.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
