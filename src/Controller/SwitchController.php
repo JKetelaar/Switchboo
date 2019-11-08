@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\PersonalInformation;
 use App\Entity\Quote;
+use App\Form\QuoteStepFourType;
 use NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -29,6 +31,65 @@ class SwitchController extends AbstractController
         return $this->render(
             'switch/step_5.html.twig'
         );
+    }
+
+    /**
+     * @param Request $request
+     * @return RedirectResponse|Response
+     *
+     * @Route("/4", name="switch_step_4")
+     */
+    public function switchStepFour(Request $request)
+    {
+        if (($quote = $this->getQuote($request)) === null) {
+            return $this->redirectToHome();
+        }
+
+        $personalInformation = new PersonalInformation();
+
+        $form = $this->createForm(QuoteStepFourType::class, $personalInformation);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $personalInformation = $form->getData();
+            $quote->setPersonalInformation($personalInformation);
+
+            $this->getDoctrine()->getManager()->persist($personalInformation);
+            $this->getDoctrine()->getManager()->persist($quote);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('switch_step_5');
+        }
+
+        return $this->render(
+            'switch/step_4.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    }
+
+    /**
+     * @param Request $request
+     * @return Quote|null
+     */
+    private function getQuote(Request $request): ?Quote
+    {
+        $id = $request->getSession()->get('quote');
+
+        if ($id === null) {
+            return null;
+        }
+
+        return $this->getDoctrine()->getRepository(Quote::class)->find($id);
+    }
+
+    /**
+     * @return RedirectResponse
+     */
+    private function redirectToHome(): RedirectResponse
+    {
+        return $this->redirectToRoute('home');
     }
 
     /**
@@ -77,28 +138,5 @@ class SwitchController extends AbstractController
                 'form' => $form->createView(),
             ]
         );
-    }
-
-    /**
-     * @param Request $request
-     * @return Quote|null
-     */
-    private function getQuote(Request $request): ?Quote
-    {
-        $id = $request->getSession()->get('quote');
-
-        if ($id === null) {
-            return null;
-        }
-
-        return $this->getDoctrine()->getRepository(Quote::class)->find($id);
-    }
-
-    /**
-     * @return RedirectResponse
-     */
-    private function redirectToHome(): RedirectResponse
-    {
-        return $this->redirectToRoute('home');
     }
 }

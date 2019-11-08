@@ -96,6 +96,11 @@ class Quote
      */
     private $chosenSupplier;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PersonalInformation", inversedBy="quotes")
+     */
+    private $personalInformation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -301,6 +306,18 @@ class Quote
     public function setChosenSupplier(?string $chosenSupplier): self
     {
         $this->chosenSupplier = $chosenSupplier;
+
+        return $this;
+    }
+
+    public function getPersonalInformation(): ?PersonalInformation
+    {
+        return $this->personalInformation;
+    }
+
+    public function setPersonalInformation(?PersonalInformation $personalInformation): self
+    {
+        $this->personalInformation = $personalInformation;
 
         return $this;
     }

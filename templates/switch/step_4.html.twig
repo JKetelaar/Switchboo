@@ -71,11 +71,7 @@
                             </div>
 
                             <div class="col-12 col-md-4">
-                                <select class="form-control selector">
-                                    <option>mr</option>
-                                    <option>mrs</option>
-                                    <option>miss</option>
-                                </select>
+                                {{ form_widget(form.title) }}
                             </div>
                         </div>
 
@@ -86,7 +82,7 @@
                             </div>
 
                             <div class="col-12 col-md-5">
-                                <input type="text" class="form-control" id="">
+                                {{ form_widget(form.firstName) }}
                             </div>
                         </div>
 
@@ -97,7 +93,7 @@
                             </div>
 
                             <div class="col-12 col-md-5">
-                                <input type="text" class="form-control" id="">
+                                {{ form_widget(form.surName) }}
                             </div>
                         </div>
 
@@ -108,7 +104,7 @@
                             </div>
 
                             <div class="col-12 col-md-3">
-                                <input type="text" class="form-control" id="" placeholder="DD/MM/YYYY">
+                                {{ form_widget(form.dateOfBirth) }}
                             </div>
                         </div>
 
@@ -133,7 +129,7 @@
                             </div>
 
                             <div class="col-12 col-md-4">
-                                <input type="text" class="form-control" id="">
+                                {{ form_widget(form.phoneNumber) }}
                             </div>
                         </div>
 
@@ -157,11 +153,8 @@
                             </div>
 
                             <div class="col-12 col-md-6">
-                                <select class="form-control selector" id="address">
-                                    <option>1 something road</option>
-                                    <option>2 something road</option>
-                                    <option>3 something road</option>
-                                </select>
+
+                                {{ form_widget(form.address) }}
                             </div>
                         </div>
 
@@ -215,7 +208,7 @@
                     </div>
 
                     <div class="col-12 col-md-3">
-                        <input type="text" class="form-control" id="" placeholder="optional">
+                        {{ form_widget(form.specialRequirements) }}
                     </div>
 
 
@@ -242,7 +235,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" id="">
+                        {{ form_widget(form.holdersName) }}
                     </div>
 
                 </div>
@@ -256,7 +249,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" id="">
+                        {{ form_widget(form.sortCode) }}
                     </div>
 
 
@@ -271,7 +264,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" id="">
+                        {{ form_widget(form.accountNumber) }}
                     </div>
 
 
@@ -282,7 +275,7 @@
                 <!-- direct debit guarantee question -->
                 <div class="row question-row">
                     <div class="col-12 question-title">
-                        <img src="../images/direct-debit-guarantee.png" class="img-fluid"/>
+                        <img src="{{ asset('assets/images/direct-debit-guarantee.png') }}" class="img-fluid"/>
                     </div>
 
 
