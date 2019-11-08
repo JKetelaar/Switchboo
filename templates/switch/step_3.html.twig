@@ -26,17 +26,15 @@
 {% block body %}
     <div class="container-fluid" id="form-container">
         {{ form_errors(form) }}
+        <!-- start of top bars -->
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center">
-
                 <div class="step-bar"></div>
                 <div class="step-bar"></div>
                 <div class="step-bar active"></div>
                 <div class="step-bar"></div>
-
             </div>
         </div>
-
 
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center" id="step-text">
@@ -45,90 +43,20 @@
                 <p>This is the cheapest deal available</p>
             </div>
         </div>
-
-
         <!-- end of top bars -->
 
-
         <!-- main form content -->
-
         <div class="row">
             <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
 
+                {{ form_start(form) }}
 
-                <div class="row result-row">
+                <!-- cheapest supplier is shown -->
 
-                    <!-- image column -->
-                    <div class="col-12 col-md-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="column-title supplier-title">Supplier</h5>
-                            </div>
-                            <div class="col-12">
-                                <div id="british-gas"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of image column -->
+                <div class="btn-group btn-group-toggle" style="padding-bottom: 15px; display: inherit">
 
 
-                    <!-- type column -->
-                    <div class="col-12 col-md-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="column-title">Type</h5>
-                            </div>
-                            <div class="col-12">
-                                <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
-                                <p class="column-inner-text">12 months fixed plan</p>
-
-                                <p class="column-inner-text">View tariff details</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of type column -->
-
-
-                    <!-- personal projection column -->
-                    <div class="col-12 col-md-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="column-title">Personal Projection</h5>
-                            </div>
-                            <div class="col-12">
-                                <p class="column-inner-text r-m-bottom">1050 per year</p>
-                                <p class="column-inner-text">87.50 per month</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of personal projection column -->
-
-
-                    <!-- savings column -->
-                    <div class="col-12 col-md-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <h5 class="column-title">Savings</h5>
-                            </div>
-                            <div class="col-12">
-                                <h5 class="column-price-value">302.71</h5>
-                                <h5 class="column-price-button active">Select</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end of savings column -->
-
-                </div>
-
-
-                <div class="row">
-                    <p id="view-more"><a>View more results</a></p>
-                </div>
-
-
-                <div class="hidden">
-
-                    <div class="row result-row">
+                    <div class="row result-row" style="margin: 0;">
 
                         <!-- image column -->
                         <div class="col-12 col-md-4">
@@ -137,7 +65,7 @@
                                     <h5 class="column-title supplier-title">Supplier</h5>
                                 </div>
                                 <div class="col-12">
-                                    <div id="SSE"></div>
+                                    <div id="british-gas"></div>
                                 </div>
                             </div>
                         </div>
@@ -183,101 +111,125 @@
                                     <h5 class="column-title">Savings</h5>
                                 </div>
                                 <div class="col-12">
-                                    <h5 class="column-price-value">213.12</h5>
-                                    <h5 class="column-price-button">Select</h5>
+                                    <h5 class="column-price-value">302.71</h5>
+                                    <h5 class="column-price-button active">
+                                        <input type="radio" name="quote_step_three[chosenSupplier]" value="britishGas"
+                                               {% if form.chosenSupplier.vars.value == 'britishGas' %}checked{% endif %}
+                                               checked>
+                                        Select
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                         <!-- end of savings column -->
-
                     </div>
+                </div>
+
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                    Show more providers
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+
+                                <!-- more expensive providers go here -->
+                                <div class="row result-row">
+                                    <!-- image column -->
+                                    <div class="col-12 col-md-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title supplier-title">Supplier</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <div id="SSE"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of image column -->
 
 
-                    <div class="row result-row">
+                                    <!-- type column -->
+                                    <div class="col-12 col-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Type</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
+                                                <p class="column-inner-text">12 months fixed plan</p>
 
-                        <!-- image column -->
-                        <div class="col-12 col-md-4">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title supplier-title">Supplier</h5>
+                                                <p class="column-inner-text">View tariff details</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of type column -->
+
+
+                                    <!-- personal projection column -->
+                                    <div class="col-12 col-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Personal Projection</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="column-inner-text r-m-bottom">1050 per year</p>
+                                                <p class="column-inner-text">87.50 per month</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of personal projection column -->
+
+
+                                    <!-- savings column -->
+                                    <div class="col-12 col-md-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Savings</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <h5 class="column-price-value">213.12</h5>
+                                                <h5 class="column-price-button">
+                                                    <input type="radio" name="quote_step_three[chosenSupplier]"
+                                                           value="sse"
+                                                           {% if form.chosenSupplier.vars.value == 'sse' %}checked{% endif %}>
+                                                    Select
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of savings column -->
+
                                 </div>
-                                <div class="col-12">
-                                    <div id="EDF"></div>
-                                </div>
+
+
                             </div>
                         </div>
-                        <!-- end of image column -->
-
-
-                        <!-- type column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Type</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
-                                    <p class="column-inner-text">12 months fixed plan</p>
-
-                                    <p class="column-inner-text">View tariff details</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of type column -->
-
-
-                        <!-- personal projection column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Personal Projection</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">1050 per year</p>
-                                    <p class="column-inner-text">87.50 per month</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of personal projection column -->
-
-
-                        <!-- savings column -->
-                        <div class="col-12 col-md-2">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Savings</h5>
-                                </div>
-                                <div class="col-12">
-                                    <h5 class="column-price-value">105.21</h5>
-                                    <h5 class="column-price-button">Select</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of savings column -->
-
                     </div>
-
-
                 </div>
 
 
                 <!-- next page button -->
                 <div class="row question-row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
-                        <a href="form-4.html">
-                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SWITCH NOW</span>
-                            </button>
-                        </a>
+                        {{ form_widget(form.submit) }}
                         <p class="next-lower-text">Good on you!</p>
                     </div>
                 </div>
                 <!-- end of next page button -->
 
 
+                {{ form_end(form, {'render_rest': false}) }}
             </div>
 
         </div>
-
         <!-- end of main form content -->
 
         <!-- start of footer -->
@@ -287,8 +239,8 @@
             </div>
         </div>
         <!-- end of footer -->
-
     </div>
+
 {% endblock %}
 
 {% block javascripts %}

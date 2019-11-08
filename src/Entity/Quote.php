@@ -91,6 +91,11 @@ class Quote
      */
     private $elecUseKWH;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $chosenSupplier;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -284,6 +289,18 @@ class Quote
     public function setElecUseKWH(?float $elecUseKWH): self
     {
         $this->elecUseKWH = $elecUseKWH;
+
+        return $this;
+    }
+
+    public function getChosenSupplier(): ?string
+    {
+        return $this->chosenSupplier;
+    }
+
+    public function setChosenSupplier(?string $chosenSupplier): self
+    {
+        $this->chosenSupplier = $chosenSupplier;
 
         return $this;
     }
