@@ -84,16 +84,16 @@
                     </div>
 
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary type-button {% if form.sameSupplier.vars.value == '1' %}active{% endif %}"
+                        <label class="btn btn-primary type-button {% if form.sameSupplier.vars.checked %}active{% endif %}"
                                style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle; margin-right: 50px;">
                             <input type="radio" name="quote_step_one[sameSupplier]" value="1"
-                                   {% if form.sameSupplier.vars.value == '1' %}checked{% endif %}>
+                                   {% if form.sameSupplier.vars.checked %}checked{% endif %}>
                             <span style="line-height: 111px;">Yes</span>
                         </label>
-                        <label class="btn btn-primary type-button {% if form.sameSupplier.vars.value == '0' %}active{% endif %}"
+                        <label class="btn btn-primary type-button {% if form.sameSupplier.vars.checked == false %}active{% endif %}"
                                style="border-radius: 50%; height: 123px; width: 123px; vertical-align: middle">
                             <input type="radio" name="quote_step_one[sameSupplier]" value="0"
-                                   {% if form.sameSupplier.vars.value == '0' %}checked{% endif %}>
+                                   {% if form.sameSupplier.vars.checked == false %}checked{% endif %}>
                             <span style="line-height: 111px;">No</span>
                         </label>
                     </div>

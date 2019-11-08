@@ -126,7 +126,12 @@ class SwitchController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var Quote $quote */
             $quote = $form->getData();
+
+            if ($request->request->get('quote_step_one') !== null && $request->request->get('quote_step_one')['sameSupplier'] == '0') {
+                $quote->setSameSupplier(false);
+            }
 
             $this->getDoctrine()->getManager()->persist($quote);
             $this->getDoctrine()->getManager()->flush();
