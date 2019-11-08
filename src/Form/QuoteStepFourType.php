@@ -6,6 +6,7 @@ use App\Entity\PersonalInformation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -73,6 +74,11 @@ class QuoteStepFourType extends AbstractType
                 'accountNumber',
                 TextType::class,
                 ['attr' => ['class' => 'form-control', 'placeholder' => ''], 'required' => true]
+            )
+            ->add(
+                'submit',
+                SubmitType::class,
+                ['attr' => ['class' => 'btn btn-primary black-button'], 'label' => 'SWITCH']
             );
     }
 

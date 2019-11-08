@@ -286,10 +286,7 @@
                 <!-- next page button -->
                 <div class="row question-row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
-                        <a href="form-5.html">
-                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SWITCH</span>
-                            </button>
-                        </a>
+                        {{ form_widget(form.submit) }}
                         <p class="next-lower-text">Easypeasy</p>
                     </div>
                 </div>
