@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
-
+                {{ form_start(form) }}
 
                 <!-- first question -->
                 <div class="row question-row">
@@ -291,6 +291,8 @@
                     </div>
                 </div>
                 <!-- end of next page button -->
+
+                {{ form_end(form, {'render_rest': false}) }}
             </div>
         </div>
         <!-- end of main form content -->

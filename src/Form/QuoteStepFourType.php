@@ -87,6 +87,7 @@ class QuoteStepFourType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class' => PersonalInformation::class,
+                'csrf_protection' => false
             ]
         );
     }

@@ -45,7 +45,9 @@ class SwitchController extends AbstractController
             return $this->redirectToHome();
         }
 
-        $personalInformation = new PersonalInformation();
+        if (($personalInformation = $quote->getPersonalInformation()) === null) {
+            $personalInformation = new PersonalInformation();
+        }
 
         $form = $this->createForm(QuoteStepFourType::class, $personalInformation);
 
