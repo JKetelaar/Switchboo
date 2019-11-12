@@ -193,7 +193,7 @@
 
                     <div class="col-6 offset-3 offset-md-0 col-md-2">
                         <label class="btn btn-primary type-button round-button-circle" id="not-sure-button">
-                            <input class="display-hide" type="radio" name="quote_step_one[plantype]" value="1">
+                            <input class="display-hide" type="radio" id="resetPlan">
                             <span><i class="fas fa-question"></i></span>
                         </label>
                     </div>
@@ -261,8 +261,21 @@
     <script src="{{ asset('assets/js/forms.js') }}"></script>
 
     <script>
+        const plans = $('#quote_step_one_plan');
+        const resetPlan = $('#resetPlan');
+
+        plans.val('');
+
+        resetPlan.on('click', function () {
+            plans.val('');
+        });
+
+        plans.change(function () {
+            resetPlan.closest("label").removeClass("active");
+            resetPlan.prop('checked', false);
+        });
+
         $('#quote_step_one_energySupplier').change(function () {
-            const plans = $('#quote_step_one_plan');
             plans.empty();
             $.getJSON("/api/plans/" + $(this).val(), function (result) {
                 $.each(result, function (i, field) {
