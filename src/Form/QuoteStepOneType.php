@@ -65,7 +65,7 @@ class QuoteStepOneType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-
+                        'Find your supplier' => $options['plans'],
                     ],
                     'attr' => [
                         'class' => 'form-control selector',
@@ -88,6 +88,7 @@ class QuoteStepOneType extends AbstractType
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
                 'suppliers' => [],
+                'plans' => []
             ]
         );
     }

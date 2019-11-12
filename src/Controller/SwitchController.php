@@ -129,12 +129,17 @@ class SwitchController extends AbstractController
         $options = [];
         if ($currentStep === 1) {
             $suppliers = [];
+            $plans = [];
             /** @var Supplier $supplier */
             foreach ($switchManager->getSuppliers($quote->getPostcode()) as $supplier) {
                 $suppliers[$supplier->getName()] = $supplier->getId();
+                foreach ($supplier->getPlans() as $plan) {
+                    $plans[$plan->getName()] = $plan->getId();
+                }
             }
             ksort($suppliers);
             $options['suppliers'] = $suppliers;
+            $options['plans'] = $plans;
         }
 
         $form = $this->createForm($formClass, $quote, $options);
