@@ -120,7 +120,7 @@ class SwitchManager
                 $options
             );
         } catch (GuzzleException $e) {
-            var_dump($e->getMessage());
+            var_dump($e->getMessage()->getBody()->getContents());
             die();
         }
 
