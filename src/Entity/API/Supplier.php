@@ -5,7 +5,9 @@
 
 namespace App\Entity\API;
 
-class Supplier implements \JsonSerializable
+use JsonSerializable;
+
+class Supplier implements JsonSerializable
 {
     /**
      * @var int

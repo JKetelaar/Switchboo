@@ -8,8 +8,6 @@ namespace App\Service;
 use App\Entity\API\Plan;
 use App\Entity\API\Supplier;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\RequestException;
 
 /**
  * Class SwitchManager
@@ -114,16 +112,11 @@ class SwitchManager
             $options['json'] = $data;
         }
 
-        try {
-            $request = $this->client->request(
-                $method,
-                $path,
-                $options
-            );
-        } catch (RequestException $e) {
-            var_dump($e->getResponse()->getBody()->getContents());
-            die();
-        }
+        $request = $this->client->request(
+            $method,
+            $path,
+            $options
+        );
 
         return json_decode($request->getBody()->getContents(), true);
     }

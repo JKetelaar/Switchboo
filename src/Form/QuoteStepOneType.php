@@ -88,7 +88,7 @@ class QuoteStepOneType extends AbstractType
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
                 'suppliers' => [],
-                'plans' => []
+                'plans' => [],
             ]
         );
     }

@@ -28,14 +28,15 @@ class QuoteType extends AbstractType
             ->add('elecMoneyPerType')
             ->add('elecUseKWH')
             ->add('chosenSupplier')
-            ->add('personalInformation')
-        ;
+            ->add('personalInformation');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
-            'data_class' => Quote::class,
-        ]);
+        $resolver->setDefaults(
+            [
+                'data_class' => Quote::class,
+            ]
+        );
     }
 }
