@@ -23,5 +23,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\Service\SwitchManager:
+        arguments:
+            $url: 'https://rest.staging.energyhelpline.com/'
+            $apiKey: 'F63ED344-8A05-4065-81C0-CE5D2DC23F6E'
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Quote;
+use App\Service\SwitchManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -11,6 +12,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class QuoteStepOneType extends AbstractType
 {
+    /**
+     * @var SwitchManager
+     */
+    private $switchManager;
+
+    /**
+     * QuoteStepOneType constructor.
+     * @param SwitchManager $switchManager
+     */
+    public function __construct(SwitchManager $switchManager)
+    {
+        $this->switchManager = $switchManager;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -37,11 +52,7 @@ class QuoteStepOneType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-                        'Find your supplier' => [
-                            'Supplier 1' => 1,
-                            'Supplier 2' => 2,
-                            'Supplier 3' => 3,
-                        ],
+                        'Find your supplier' => $options['suppliers'],
                     ],
                     'attr' => [
                         'class' => 'form-control selector',
@@ -54,11 +65,7 @@ class QuoteStepOneType extends AbstractType
                 ChoiceType::class,
                 [
                     'choices' => [
-                        'Select your plan' => [
-                            'Plan 1' => 1,
-                            'Plan 2' => 2,
-                            'Plan 3' => 3,
-                        ],
+
                     ],
                     'attr' => [
                         'class' => 'form-control selector',
@@ -80,6 +87,7 @@ class QuoteStepOneType extends AbstractType
             [
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
+                'suppliers' => [],
             ]
         );
     }

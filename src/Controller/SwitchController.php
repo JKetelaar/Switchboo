@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\API\Supplier;
 use App\Entity\PersonalInformation;
 use App\Entity\Quote;
 use App\Form\QuoteStepFourType;
+use App\Service\SwitchManager;
 use NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -97,16 +99,17 @@ class SwitchController extends AbstractController
     /**
      * @param int $step
      * @param Request $request
+     * @param SwitchManager $switchManager
      * @return RedirectResponse|Response
      *
      * @Route("/{step}", name="switch_step")
      */
-    public function switchStep(int $step, Request $request)
+    public function switchStep(int $step, Request $request, SwitchManager $switchManager)
     {
         $numberFormatter = new NumberFormatter('en', NumberFormatter::SPELLOUT);
         $stepFormType = 'App\Form\QuoteStep'.ucfirst($numberFormatter->format($step)).'Type';
 
-        return $this->nextStep($request, $step, $step + 1, $stepFormType);
+        return $this->nextStep($request, $step, $step + 1, $stepFormType, $switchManager);
     }
 
     /**
@@ -114,22 +117,36 @@ class SwitchController extends AbstractController
      * @param int $currentStep
      * @param int $nextStep
      * @param string $formClass
+     * @param SwitchManager $switchManager
      * @return RedirectResponse|Response
      */
-    private function nextStep(Request $request, int $currentStep, int $nextStep, string $formClass)
+    private function nextStep(Request $request, int $currentStep, int $nextStep, string $formClass, SwitchManager $switchManager)
     {
         if (($quote = $this->getQuote($request)) === null) {
             return $this->redirectToHome();
         }
 
-        $form = $this->createForm($formClass, $quote);
+        $options = [];
+        if ($currentStep === 1) {
+            $suppliers = [];
+            /** @var Supplier $supplier */
+            foreach ($switchManager->getSuppliers($quote->getPostcode()) as $supplier) {
+                $suppliers[$supplier->getName()] = $supplier->getId();
+            }
+            ksort($suppliers);
+            $options['suppliers'] = $suppliers;
+        }
+
+        $form = $this->createForm($formClass, $quote, $options);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Quote $quote */
             $quote = $form->getData();
 
-            if ($request->request->get('quote_step_one') !== null && $request->request->get('quote_step_one')['sameSupplier'] == '0') {
+            if ($request->request->get('quote_step_one') !== null && $request->request->get(
+                    'quote_step_one'
+                )['sameSupplier'] == '0') {
                 $quote->setSameSupplier(false);
             }
 

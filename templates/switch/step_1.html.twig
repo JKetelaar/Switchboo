@@ -5,7 +5,7 @@
 {% block stylesheets %}
     <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/form1.css') }}" rel="stylesheet">
-    <script src="{{  asset('https://kit.fontawesome.com/28d22f76c2.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('https://kit.fontawesome.com/28d22f76c2.js') }}" crossorigin="anonymous"></script>
 
 {% endblock %}
 
@@ -60,23 +60,25 @@
                     </div>
 
 
-
                     <div class="form-check">
                         <div class="row">
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button active">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]" value="1" checked>
+                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                           value="1" checked>
                                     <span>Gas and Electricity</span>
                                 </label>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]" value="2"> Gas only
+                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                           value="2"> Gas only
                                 </label>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]" value="3">
+                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                           value="3">
                                     Electricity only
                                 </label>
                             </div>
@@ -95,13 +97,15 @@
                         <div class="row">
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button active round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]" value="1" checked>
+                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
+                                           value="1" checked>
                                     <span>Yes</span>
                                 </label>
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]" value="0">
+                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
+                                           value="0">
                                     <span>No</span>
                                 </label>
                             </div>
@@ -205,19 +209,19 @@
                     </div>
 
 
-
-
                     <div class="form-check">
                         <div class="row">
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button active round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[economyMeter]" value="1" checked>
+                                    <input class="display-hide" type="radio" name="quote_step_one[economyMeter]"
+                                           value="1" checked>
                                     <span>Yes</span>
                                 </label>
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[economyMeter]" value="0">
+                                    <input class="display-hide" type="radio" name="quote_step_one[economyMeter]"
+                                           value="0">
                                     <span>No</span>
                                 </label>
                             </div>
@@ -255,4 +259,19 @@
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/forms.js') }}"></script>
+
+    <script>
+        $('#quote_step_one_energySupplier').change(function () {
+            const plans = $('#quote_step_one_plan');
+            plans.empty();
+            $.getJSON("/api/plans/" + $(this).val(), function (result) {
+                $.each(result, function (i, field) {
+                    plans.append($('<option>', {
+                        value: field.id,
+                        text: field.name
+                    }));
+                });
+            });
+        });
+    </script>
 {% endblock %}
