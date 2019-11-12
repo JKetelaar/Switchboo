@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Quote;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,7 +23,7 @@ class QuoteStepOneType extends AbstractType
                         'Gas only' => '2',
                         'Electricity only' => '3',
                     ],
-                    'label' => 'What do you use at your home',
+                    'label' => 'What do you use at your home?',
                     'expanded' => true,
                     'multiple' => false,
                     'choice_attr' => [
@@ -32,7 +31,7 @@ class QuoteStepOneType extends AbstractType
                     ],
                 ]
             )
-            ->add('sameSupplier', CheckboxType::class)
+            ->add('sameSupplier')
             ->add(
                 'energySupplier',
                 ChoiceType::class,

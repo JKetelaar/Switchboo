@@ -73,11 +73,11 @@ $(document).ready(function () {
      * FORM-3
      * supplier list select
      */
-    $(document).on('click', '.result-row', function (e) {
+    $(document).on('click','.result-row',function(e) {
 
-        $("#form-control").find(".column-price-button").removeClass("active");
+        $("#form-control").find(".result-row").removeClass("active");
 
-        $(this).find(".column-price-button").addClass("active");
+        $(this).addClass("active");
 
     });
 

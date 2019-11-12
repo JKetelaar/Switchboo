@@ -1,42 +1,14 @@
-@font-face {
-    font-family: "fsjoey";
-    src: url("../vendor/fonts/FSJoeyTrial-Regular.otf") format("opentype");   
-}
-
-@font-face {
-    font-family: "fsjoeyBold";
-    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyHeavy";
-    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyMedium";
-    src: url("../vendor/fonts/FSJoeyTrial-Medium.otf") format("opentype");
-}
-
-
-@font-face {
-    font-family: "fsjoeyMediumItalic";
-    src: url("../vendor/fonts/FSJoeyTrial-MediumItalic.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyBoldItalic";
-    src: url("../vendor/fonts/FSJoeyTrial-BoldItalic.otf") format("opentype");
-}
-
 
 .type-button {
+    padding-top: 10px;
     width: 100%;
     height: calc(1.8em + .75rem + 2px);
     background-color: #f7f7f7;
     color: black;
     border: none !Important;
-    font-family: "fsjoeyHeavy";
+    font-family: oscine, sans-serif;
+    font-weight: 800;
+    font-style: normal;
     margin-bottom: 10px;
 }
 
@@ -107,23 +79,31 @@
 
 
 .control-label {
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
 }
 
 
 #plan-or {
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     font-size: 18px;
 }
 
 
 
 
+#plan-circle {
+    font-size: 0.8rem;
+}
 
 
 
+#not-sure-button {
+    margin-top: -2.8%;
+}
 
-
+#not-sure-button span {
+    font-size: 1rem;
+}
 
 
 
@@ -150,7 +130,7 @@
 @media (max-width: 575.98px) {
     
     #plan-or {
-        font-family: "fsjoey";
+        	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
         font-size: 20px;
     }
     
@@ -178,6 +158,14 @@
         font-size: 24px;
     }
 
+    #not-sure-button {
+        margin-top: -25% !Important;
+    }
+
+    #not-sure-button span {
+        font-size: 0.8rem !Important;
+    }
+
           
 }
 
@@ -188,8 +176,12 @@
         margin-top: -3%;
     }
     
-    #plan-or {
-        margin-top: 5px;
+    #not-sure-button {
+        margin-top: 23%;
+    }
+
+    #not-sure-button span {
+        font-size: 0.8rem;
     }
     
 }
@@ -206,32 +198,37 @@
         font-size: 14px;
         margin-top: -3%;
     }
+
+
+    #not-sure-button {
+        margin-top: -25%;
+    }
+
+
     
 }
 
 
-@media (min-width: 1199.99px) and (max-width: 1400px) {
-    
-    #plan-or {
-        font-size: 25px;
+@media (min-width: 1199.99px) {
+
+    #plan-or p {
+        margin-top: 3px;
+        font-size: 1.4rem;
     }
-    
-    #plan-circle {
-        margin-top: -2%;
+
+    #not-sure-button {
+        margin-top: -22%;
+    }
+
+    #not-sure-button span {
+        font-size: 1.5rem;
+        margin-top: -12px;
+    }
+
+    .form-check {
+        padding-left: 20px !Important;
     }
      
 }
 
 
-
-@media (min-width: 1400.1px) {
-    
-    #plan-or {
-        font-size: 25px;
-    }
-    
-    #plan-circle {
-        margin-top: -4%;
-    }
-    
-}

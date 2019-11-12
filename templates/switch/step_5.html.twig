@@ -9,12 +9,14 @@
 
 {% block navigation %}
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">
+        <span id="nav-brand">
+        <a href="../../" target="_blank" class="navbar-brand">
             <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
         </a>
+        </span>
 
         <form class="form-inline">
-            <a href="{{ path('switch_step_4') }}">
+            <a href="{{ path('switch_step', {'step': 2}) }}">
                 <span class="navbar-text">
                     <span>Back</span>
                 </span>
@@ -26,9 +28,8 @@
 {% block body %}
     <div class="container-fluid" id="form-container">
         <div class="row">
-            <div class="col-md-6 offset-md-3 text-center">
+            <div class="col-md-6 offset-md-3 text-center" id="step-bars">
 
-                <div class="step-bar"></div>
                 <div class="step-bar"></div>
                 <div class="step-bar"></div>
                 <div class="step-bar active"></div>

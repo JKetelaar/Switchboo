@@ -1,50 +1,23 @@
-@font-face {
-    font-family: "fsjoey";
-    src: url("../vendor/fonts/FSJoeyTrial-Regular.otf") format("opentype");   
-}
-
-@font-face {
-    font-family: "fsjoeyBold";
-    src: url("../vendor/fonts/FSJoeyTrial-Bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyHeavy";
-    src: url("../vendor/fonts/FSJoeyTrial-Heavy.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyMedium";
-    src: url("../vendor/fonts/FSJoeyTrial-Medium.otf") format("opentype");
-}
-
-
-@font-face {
-    font-family: "fsjoeyMediumItalic";
-    src: url("../vendor/fonts/FSJoeyTrial-MediumItalic.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "fsjoeyBoldItalic";
-    src: url("../vendor/fonts/FSJoeyTrial-BoldItalic.otf") format("opentype");
-}
-
-
-
 ::-webkit-input-placeholder {
-    font-family: "fsjoeyMediumItalic";
+    font-family: oscine, sans-serif;
+	font-weight: 700;
+	font-style: italic;
     font-size: 14px;
 }
 ::-moz-placeholder {
-    font-family: "fsjoeyMediumItalic";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: italic;
     font-size: 14px;
 }
 :-ms-input-placeholder {
-    font-family: "fsjoeyMediumItalic";
+    font-family: oscine, sans-serif;
+	font-weight: 700;
+	font-style: italic;
     font-size: 14px;
 }
 ::placeholder {
-    font-family: "fsjoeyMediumItalic";
+    font-family: oscine, sans-serif;
+	font-weight: 700;
+	font-style: italic;
     font-size: 14px;
 }
 
@@ -53,9 +26,19 @@
 }
 
 
+h1 {
+    font-weight: 800;
+}
+
+h3, h5 {
+    font-weight: 700;
+}
+
 
 body {
-    font-family: 'fsjoey', sans-serif, Arial;
+    font-family: oscine, sans-serif;
+	font-weight: 400;
+	font-style: normal;
     background-color: #f7f7f7;
 }
 
@@ -103,7 +86,9 @@ body {
 
 .nav-item {
     height: 55px;
-    font-family: "fsjoeyMedium";
+	font-family: oscine, sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .nav-item a {
@@ -141,7 +126,7 @@ body {
 }
 
 .nav-link {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 
@@ -150,7 +135,9 @@ body {
     color: #ff0b9a;
     font-weight: 700;
     font-size: 17px;
-    font-family: "fsjoeyMedium";
+	font-family: oscine, sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 
@@ -178,7 +165,9 @@ body {
 
 
 #section-one-text {
-    font-family: "fsjoeyHeavy";
+    font-family: oscine, sans-serif;
+	font-weight: 800;
+	font-style: normal;
     
 }
 
@@ -188,13 +177,18 @@ body {
 }
 
 #section-one-text > h4 {
-    font-family: "fsjoey";
+    font-family: oscine, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
     margin-top: 18px;
 }
 
 #section-one-form h4 {
     color:white;
-    font-family: "fsjoeyHeavy";
+    font-family: oscine, sans-serif;
+	font-weight: 800;
+	font-style: normal;
     margin-bottom: 22px;
     margin-top: 15px;
     font-size: 1.2rem;
@@ -208,7 +202,7 @@ body {
     color: #484848;
     border: none;
     height: calc(2.4em + .75rem + 2px);
-    font-family: "fsjoeyMedium";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
 }
 
 #section-one-form button {
@@ -218,7 +212,9 @@ body {
     background-color: black;
     border-radius: 0px;
     border: none;
-    font-family: "fsjoeyBoldItalic";
+    font-family: oscine;
+    font-weight: 800;
+    font-style: italic;
 }
 
 
@@ -226,11 +222,11 @@ body {
 
 
 #section-two-container {
-    background-color: #f7f7f7;
-    margin-top: -60px;
-    padding-top: 90px;
+    background-color: transparent;
+    margin-top: -20px;
+    padding-top: 50px;
     padding-bottom: 80px;
-    font-family: "fsjoeyBold";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     
 }
 
@@ -248,7 +244,7 @@ body {
     background-color: black;
     border-radius: 0px;
     border: none;
-    font-family: "fsjoeyBoldItalic";
+    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
     margin-left: -5px;
 }
 
@@ -262,12 +258,12 @@ body {
 .card-title {
     font-size: 3rem;
     color: #ff0a9a;
-    font-family: "fsjoeyHeavy";
+    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
     margin-bottom: 20px;
 }
 
 .card-text {
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     margin-bottom: -10px;
 }
 
@@ -284,7 +280,7 @@ body {
 
 #section-three-header {
     color: #ff0b9a;
-    font-family: "fsjoeyMedium";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     margin-bottom: 20px;
 }
 
@@ -312,7 +308,7 @@ body {
 .card-header h5 a {
     color: black;
     text-decoration: none;
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
 }
 
 .card-header h5 a:hover {
@@ -360,13 +356,13 @@ body {
 }
 
 #section-four-header {
-    font-family: "fsjoeyHeavy";
+    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
     color: white;
 }
 
 #section-four-secondary-header {
     margin-top: 10px;
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     color: white;
     font-size: 16px;
 }
@@ -380,7 +376,7 @@ body {
     color: #484848;
     border: none;
     height: calc(2.4em + .75rem + 2px);
-    font-family: "fsjoeyMedium";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     padding-left: 20px;
 }
 
@@ -391,13 +387,15 @@ body {
     background-color: black;
     border-radius: 0px;
     border: none;
-    font-family: "fsjoeyBoldItalic";
+    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
 }
 
 
 #section-four-footer {
     margin-top: 30px;
-    font-family: "fsjoeyMedium";
+    font-family: oscine, sans-serif; 	
+    font-weight: 400; 	
+    font-style: normal;
     color: white;
     font-size: 16px;
 }
@@ -415,13 +413,13 @@ body {
 }
 
 .footer-link-title {
-    font-family: "fsjoeyMedium";
+    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     color: #ff0b9a;
     margin-bottom: 14px;
 }
 
 .footer-link-text {
-    font-family: "fsjoey";
+    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     color: black;
     margin-bottom: 5px;
     font-size: 18px;
@@ -430,7 +428,7 @@ body {
 .footer-link-text span:hover {
     border-bottom-style: solid;
     border-bottom-color: #ff0b9a;
-    border-bottom-width: 1.4px;
+    border-bottom-width: 2px;
     color: #ff0b9a;
 }
 
@@ -447,22 +445,7 @@ body {
 
 
 
-@media (min-width: 992px) {
-    
-    #section-two-button button {
-        width: 88% !Important;   
-    }
-    
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0px !Important;
-        padding-left: 0px !Important;
-    }
-    
-    .nav-item {
-        margin-right: 8px;
-        margin-left: 8px;
-    }
-}
+
 
 
 
@@ -566,6 +549,19 @@ body {
     .navbar-brand {
         max-width: 70% !Important;
     }
+    #section-two-button button {
+        width: 88% !Important;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0px !Important;
+        padding-left: 0px !Important;
+    }
+
+    .nav-item {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
 }
 
 
@@ -586,107 +582,20 @@ body {
 }
 
 
+@media (min-width: 1199.98px) {
 
+    #section-one-container .row {
+        margin:auto;
+        max-width: 950px;
+    }
 
+    .navbar .container-fluid {
+        max-width: 950px;
+    }
 
-
-@media (min-width: 1199.98px) { 
-    
-    .navbar-collapse {
-        margin-top: -4px;
-    }
-    
-    #section-one-form {
-        padding-left: 20%;
-    }
-   
-    #section-one-form input {
-        width: 90%;
-    }
-    
-    
-    #section-one-form button {
-        width: 90%;
-    }
-    
-    #section-one-form .text-center {
-        max-width: 85%;
-        padding: 0px;
-    }
 }
 
 
-@media (min-width: 1400px) {
-    
-    #section-one-form {
-        padding-left: 32%;
-    }
-    
-    #section-one-form input {
-        width: 98%;
-        margin-left: 0px !Important;
-    }
-    
-    #section-one-form  h4 {
-   
-        
-    }
-    
-    #section-one-form .text-center {
-        max-width: 98%;
-        padding: 0px;
-    }
-    
-    #section-one-form button {
-        width: 98%;
-        margin-left: 0px !Important;
-    }
-    
-    .navbar-collapse {
-        margin-right: 0px; 
-    }
-    
-}
-
-
-
-@media (min-width: 1800px) {
-    
-    #section-one-form {
-        padding-left: 15%;
-        width: 80%;
-    }
-    
-    #section-one-form input {
-        width: 100%;
-        margin-left: 0px !Important;
-    }
-    
-    #section-one-form  h4 {
-        margin-left: 0px;
-        
-    }
-    
-    #section-one-form .text-center {
-        max-width: 100%;
-        padding: 0px;
-    }
-    
-    #section-one-form button {
-        width: 100%;
-        margin-left: 0px !Important;
-    }
-    
-    .navbar-collapse {
-        margin-right: 20%; 
-    }
-    
-}
-
-@media (min-width: 996px) {  
-    
-    
-}
 
 
 

@@ -32,8 +32,8 @@
 
 
 .selector {
-    background-position: 90% 50% !Important;
-    background-size: 7.5% !Important;
+    background-position: 95% 50% !Important;
+    background-size: 0.7rem;
 }
 
 .radio-fix {
@@ -94,7 +94,7 @@ select {
 }
 
 
-@media (min-width: 991.99px) and (max-width: 1399px) {
+@media (min-width: 991.99px) and (max-width: 1199px) {
     
     
     .num-input {
@@ -112,11 +112,15 @@ select {
 }
 
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
     
     
-    input {
-        margin-top: -4% !Important;
+    input, select {
+        margin-top: -8% !Important;
+    }
+
+    .custom-radio {
+        margin-top: -3px;
     }
     
     
@@ -129,7 +133,7 @@ select {
     }
     
     .duration-selector {
-        margin-left: -4%;
+        margin-left: -2.5%;
         margin-top: 0% !important;
     }
 }

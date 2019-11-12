@@ -9,12 +9,13 @@
 
 {% block navigation %}
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">
+        <span id="nav-brand">
+        <a href="../../" target="_blank" class="navbar-brand">
             <img src="{{ asset('assets/images/switchboo_white.png') }}" class="img-fluid" alt=""/>
         </a>
-
+        </span>
         <form class="form-inline">
-            <a href="{{ path('switch_step', {'step': 3}) }}">
+            <a href="{{ path('switch_step', {'step': 2}) }}">
                 <span class="navbar-text">
                     <span>Back</span>
                 </span>
@@ -27,9 +28,8 @@
     <div class="container-fluid" id="form-container">
         {{ form_errors(form) }}
         <div class="row">
-            <div class="col-md-6 offset-md-3 text-center">
+            <div class="col-md-6 offset-md-3 text-center" id="step-bars">
 
-                <div class="step-bar"></div>
                 <div class="step-bar"></div>
                 <div class="step-bar"></div>
                 <div class="step-bar active"></div>
@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col-10 col-lg-8 offset-lg-2 offset-1" id="form-control">
-                {{ form_start(form) }}
+
 
                 <!-- first question -->
                 <div class="row question-row">
@@ -71,7 +71,11 @@
                             </div>
 
                             <div class="col-12 col-md-4">
-                                {{ form_widget(form.title) }}
+                                <select class="form-control selector">
+                                    <option>mr</option>
+                                    <option>mrs</option>
+                                    <option>miss</option>
+                                </select>
                             </div>
                         </div>
 
@@ -82,7 +86,7 @@
                             </div>
 
                             <div class="col-12 col-md-5">
-                                {{ form_widget(form.firstName) }}
+                                <input type="text" class="form-control" id="">
                             </div>
                         </div>
 
@@ -93,7 +97,7 @@
                             </div>
 
                             <div class="col-12 col-md-5">
-                                {{ form_widget(form.surName) }}
+                                <input type="text" class="form-control" id="">
                             </div>
                         </div>
 
@@ -104,7 +108,7 @@
                             </div>
 
                             <div class="col-12 col-md-3">
-                                {{ form_widget(form.dateOfBirth) }}
+                                <input type="text" class="form-control" id="" placeholder="DD/MM/YYYY">
                             </div>
                         </div>
 
@@ -112,31 +116,6 @@
 
                 </div>
                 <!-- end of first question -->
-
-
-                <!-- second question -->
-                <div class="row question-row">
-                    <div class="col-12 question-title">
-                        <h5>Incase we ever need to get hold of you</h5>
-                        <p>Don't worry, we will never share your details without your permission</p>
-                    </div>
-
-                    <div class="col-12">
-
-                        <div class="row question-row-inner">
-                            <div class="col-12 col-md-2">
-                                <h6 class="row-title">Phone number</h6>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                {{ form_widget(form.phoneNumber) }}
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- end of second question -->
 
 
                 <!-- third question -->
@@ -153,8 +132,11 @@
                             </div>
 
                             <div class="col-12 col-md-6">
-
-                                {{ form_widget(form.address) }}
+                                <select class="form-control selector" id="address">
+                                    <option>1 something road</option>
+                                    <option>2 something road</option>
+                                    <option>3 something road</option>
+                                </select>
                             </div>
                         </div>
 
@@ -208,7 +190,7 @@
                     </div>
 
                     <div class="col-12 col-md-3">
-                        {{ form_widget(form.specialRequirements) }}
+                        <input type="text" class="form-control" id="" placeholder="optional">
                     </div>
 
 
@@ -235,7 +217,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        {{ form_widget(form.holdersName) }}
+                        <input type="text" class="form-control" id="">
                     </div>
 
                 </div>
@@ -249,7 +231,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        {{ form_widget(form.sortCode) }}
+                        <input type="text" class="form-control" id="">
                     </div>
 
 
@@ -264,7 +246,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        {{ form_widget(form.accountNumber) }}
+                        <input type="text" class="form-control" id="">
                     </div>
 
 
@@ -275,7 +257,7 @@
                 <!-- direct debit guarantee question -->
                 <div class="row question-row">
                     <div class="col-12 question-title">
-                        <img src="{{ asset('assets/images/direct-debit-guarantee.png') }}" class="img-fluid"/>
+                        <img src="../images/direct-debit-guarantee.png" class="img-fluid"/>
                     </div>
 
 
@@ -286,13 +268,14 @@
                 <!-- next page button -->
                 <div class="row question-row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
-                        {{ form_widget(form.submit) }}
+                        <a href="form-5.html">
+                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SWITCH</span>
+                            </button>
+                        </a>
                         <p class="next-lower-text">Easypeasy</p>
                     </div>
                 </div>
                 <!-- end of next page button -->
-
-                {{ form_end(form, {'render_rest': false}) }}
             </div>
         </div>
         <!-- end of main form content -->

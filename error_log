@@ -1,0 +1,10 @@
+[08-Nov-2019 01:05:21 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/cpanel/ea-php70/root/usr/lib64/php/modules/iconv.so' - /opt/cpanel/ea-php70/root/usr/lib64/php/modules/iconv.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[08-Nov-2019 01:05:21 UTC] PHP Fatal error:  Uncaught TypeError: Return value of Symfony\Component\Dotenv\Dotenv::populate() must be an instance of Symfony\Component\Dotenv\void, none returned in /home/switchboo/Switchboo/vendor/symfony/dotenv/Dotenv.php:167
+Stack trace:
+#0 /home/switchboo/Switchboo/vendor/symfony/dotenv/Dotenv.php(492): Symfony\Component\Dotenv\Dotenv->populate(Array, false)
+#1 /home/switchboo/Switchboo/vendor/symfony/dotenv/Dotenv.php(65): Symfony\Component\Dotenv\Dotenv->doLoad(false, Array)
+#2 /home/switchboo/Switchboo/vendor/symfony/dotenv/Dotenv.php(85): Symfony\Component\Dotenv\Dotenv->load('/home/switchboo...')
+#3 /home/switchboo/Switchboo/config/bootstrap.php(17): Symfony\Component\Dotenv\Dotenv->loadEnv('/home/switchboo...')
+#4 /home/switchboo/Switchboo/bin/console(30): require('/home/switchboo...')
+#5 {main}
+  thrown in /home/switchboo/Switchboo/vendor/symfony/dotenv/Dotenv.php on line 167
