@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container-fluid pink-bg" id="section-one-container">
+        <div class="row">
+            <div class="col-12 white text-center">
+                <h1>SOME TITLE</h1>
+            </div>
+        </div>
+    </div>
+
+<div class="container" id="section-two-container">
+
+    <div class="row">
+        <div class="col-12">
+            <h4>some text</h4>
+        </div>
+    </div>
+
+</div>
+
+
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-sm-5 offset-sm-2 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Company</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>How it works</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>About Us</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>FAQs</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Careers</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Staff Login</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-0 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Switch</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Gas</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Electricity</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Dual Fuel</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Energy Suppliers</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-2 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Legal</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Terms and conditions</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Privacy Policy</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Cookie Policy</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-0 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Contact</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>0800 000 0000</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12" id="footer-ltd">
+                    <span>SWITCHBOO LTD is a registered company in England & Wales. (Reg no: 1234567)</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

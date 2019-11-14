@@ -27,6 +27,14 @@
 {% endblock %}
 
 {% block body %}
+
+    <div class="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
     <div class="container-fluid" id="form-container">
         {{ form_errors(form) }}
         <!-- start of top bars -->

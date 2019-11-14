@@ -89,11 +89,11 @@
 
 
                             <div class="col-1 d-hide"></div>
-                            <div class="col-5 col-md-1 col-lg-1 per-container">
+                            <div class="col-3 col-md-1 col-lg-1 per-container">
                                 <h6 class="bold form-per">per</h6>
                             </div>
 
-                            <div class="col-5 col-md-4 col-lg-3 duration-selector">
+                            <div class="col-7 col-md-4 col-lg-3 duration-selector">
                                 {{ form_widget(form.gasMoneyPerType) }}
                             </div>
                         </div>
@@ -108,11 +108,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-5 col-md-2 col-lg-3">
+                            <div class="col-3 col-md-2 col-lg-3">
                                 <h6 class="bold">I use</h6>
                             </div>
 
-                            <div class=" col-5 col-md-3 num-input">
+                            <div class=" col-7 col-md-3 num-input">
                                 <div class="form-group">
                                     {{ form_widget(form.gasUseKWH) }}
                                 </div>
@@ -164,11 +164,11 @@
 
 
                             <div class="col-1 d-hide"></div>
-                            <div class="col-5 col-md-1 col-lg-1 per-container">
+                            <div class="col-3 col-md-1 col-lg-1 per-container">
                                 <h6 class="bold form-per">per</h6>
                             </div>
 
-                            <div class="col-5 col-md-4 col-lg-3 duration-selector">
+                            <div class="col-7 col-md-4 col-lg-3 duration-selector">
                                 {{ form_widget(form.elecMoneyPerType) }}
                             </div>
                         </div>
@@ -183,11 +183,11 @@
                                 </div>
                             </div>
 
-                            <div class="col-5 col-md-2 col-lg-3">
+                            <div class="col-3 col-md-2 col-lg-3">
                                 <h6 class="bold">I use</h6>
                             </div>
 
-                            <div class="col-5 col-md-3 num-input">
+                            <div class="col-7 col-md-3 num-input">
                                 <div class="form-group">
                                     {{ form_widget(form.elecUseKWH) }}
                                 </div>
@@ -206,6 +206,22 @@
                 </div>
                 <!-- end of second question -->
 
+                <!-- third question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>How do you pay for your energy?</h5>
+                        <p>Please select your payment type</p>
+                    </div>
+
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+                        <div class="form-group">
+                            {{ form_widget(form.paymentType) }}
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of third question -->
 
                 <div class="row question-row">
                     <div class="col-12 question-title">
@@ -229,22 +245,6 @@
                 </div>
 
 
-                <!-- third question -->
-                <div class="row question-row">
-                    <div class="col-12 question-title">
-                        <h5>How do you pay for your energy?</h5>
-                        <p>Please select your payment type</p>
-                    </div>
-
-
-                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
-                        <div class="form-group">
-                            {{ form_widget(form.paymentType) }}
-                        </div>
-                    </div>
-
-                </div>
-                <!-- end of third question -->
 
 
                 <!-- next page button -->

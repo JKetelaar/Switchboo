@@ -1,31 +1,3 @@
-
-.type-button {
-    padding-top: 10px;
-    width: 100%;
-    height: calc(1.8em + .75rem + 2px);
-    background-color: #f7f7f7;
-    color: black;
-    border: none !Important;
-    font-family: oscine, sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    margin-bottom: 10px;
-}
-
-.type-button.active {
-    background-color: #ff0a9a !Important;
-    color: white;
-}
-
-.type-button:hover {
-    background-color: #ff0a9a !Important;
-}
-
-.type-button:focus {
-    box-shadow: none !Important;
-}
-
-
 .supplier-container {
     margin-bottom: 20px;
 }
@@ -232,3 +204,27 @@
 }
 
 
+.spinner-border {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    color: #ff0a9a!important;
+}
+
+.loading {
+    display: none;
+    background-color: #e6e6e67d;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

@@ -1,0 +1,410 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container-fluid pink-bg" id="section-one-container">
+        <div class="row">
+            <div class="col-md-5 offset-md-1 col-lg-4 offset-lg-1 offset-lg-2 col-xl-6 offset-xl-0 white"
+                 id="section-one-text">
+                <h1>CHEAP ENERGY.</h1>
+                <h1>SAVE MONEY.</h1>
+                <h1>AUTOMATICALLY.</h1>
+                <h1>FOR FREE.</h1>
+                <h4>Never get ripped off on your energy <br/>bills again...</h4>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-xl-5 offset-md-0 offset-lg-1">
+
+                <div class="row" id="section-one-form">
+
+                    <div class="col-md-12 text-center" id="reg-form">
+                        <h4>GET A QUOTE IN 30 SECONDS</h4>
+                    </div>
+
+                    <div class="col-md-12">
+                        {% set form = quote_form.createView %}
+                        {{ form_start(form) }}
+
+                        <div class="form-group">
+                            {{ form_widget(form.postcode) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_widget(form.email) }}
+                        </div>
+
+                        {{ form_widget(form.submit) }}
+
+                        {{ form_end(form) }}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="container" id="section-two-container">
+
+        <div class="row">
+            <div class="col-10 offset-1" id="section-two-header">
+                <h3>So how does it work...</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="card-deck">
+                    <div class="row">
+
+                        <div class="card text-center col-10 offset-1 col-sm-6 offset-sm-0 col-md-6 offset-md-2 col-lg  offset-lg-0">
+                            <div class="card-body">
+                                <h1 class="card-title">1</h1>
+                                <p class="card-text">Sign up once with a tiny bit of information</p>
+                            </div>
+                        </div>
+
+                        <div class="card text-center col-10 offset-1 col-sm-6 col-md-6 col-lg offset-sm-0 offset-md-2 offset-lg-0">
+                            <div class="card-body">
+                                <h1 class="card-title">2</h1>
+                                <p class="card-text">We find a cheaper deal for you in 2 minutes</p>
+                            </div>
+                        </div>
+
+                        <div class="card text-center col-10 offset-1 col-sm-6 col-md-6 col-lg offset-sm-0 offset-md-2 offset-lg-0">
+                            <div class="card-body">
+                                <h1 class="card-title">3</h1>
+                                <p class="card-text">We let you know that we found a great deal and take care of it</p>
+                            </div>
+                        </div>
+
+                        <div class="card text-center col-10 offset-1 col-sm-6 col-md-6 col-lg offset-sm-0 offset-md-2 offset-lg-0">
+                            <div class="card-body">
+                                <h1 class="card-title">4</h1>
+                                <p class="card-text">When that deal ends we'll switch you again to the best deal</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-0"
+                         id="section-two-button">
+                        <button type="submit" class="btn btn-primary"><span
+                                    class="white-underline">CHECK MY ENERGY</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid" id="section-three-container">
+
+        <div class="row">
+            <div class="col-12 text-center" id="section-three-header">
+                <h3>Frequently Asked Questions</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2">
+                <div id="accordion">
+
+                    <div class="card">
+                        <div class="card-header" id="heading-1">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1"
+                                   aria-expanded="false" aria-controls="collapse-1">
+                                    <span>How is switchboo completely free?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-1" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
+                            <div class="card-body">
+                                We are paid a set commission from the supplier each time we save someone money. This
+                                keeps the service completely free and doesn’t impact the price you pay.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header" id="heading-2">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2"
+                                   aria-expanded="false" aria-controls="collapse-2">
+                                    <span>How long does it take?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+                            <div class="card-body">
+                                Once you have switched, the form will be processed and sent to your new supplier within
+                                48 hours. You will always have a 14 day cancellation period just in case you change your
+                                mind. If you don’t cancel, the switch should take between 4-8 weeks however, this can
+                                sometimes vary depending on the supplier you’re switching too.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header" id="heading-3">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3"
+                                   aria-expanded="false" aria-controls="collapse-3">
+                                    <span>Do I need to do anything?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="heading-3">
+                            <div class="card-body">
+                                When you sign up and switch, you don’t need to contact your old supplier because we do
+                                it for you. Your old supplier will say goodbye and your new supplier will be in contact
+                                shortly. We do everything for you so go and put your feet up!
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header" id="heading-4">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4"
+                                   aria-expanded="false" aria-controls="collapse-4">
+                                    <span>Why use direct debit?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-4" class="collapse" data-parent="#accordion" aria-labelledby="heading-4">
+                            <div class="card-body">
+                                Switching to a monthly direct debit means that you’re likely to get a better deal from
+                                your supplier. Suppliers lower their prices for those paying by direct debit because
+                                they will receive regular and reliable payments from their customers.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header" id="heading-5">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5"
+                                   aria-expanded="false" aria-controls="collapse-5">
+                                    <span>Can I switch even if my current deal hasn’t ended?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-5" class="collapse" data-parent="#accordion" aria-labelledby="heading-5">
+                            <div class="card-body">
+                                Of course! You can switch even if your current plan hasn’t ended however, you may have a
+                                small exit fee to pay. In most cases, your savings will be bigger than your exit fee so
+                                leaving your deal early will still mean that you’re saving!
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-header" id="heading-6">
+                            <h5 class="mb-0">
+                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-6"
+                                   aria-expanded="false" aria-controls="collapse-6">
+                                    <span>How often will you switch me?</span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapse-6" class="collapse" data-parent="#accordion" aria-labelledby="heading-6">
+                            <div class="card-body">
+                                After your first switch, we will check the market again in 12 months time and
+                                automatically switch you to the cheapest deal available. This means that you will never
+                                need to fill out another boring energy form again and you’ll always be on the best deal.
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid" id="section-four-container">
+
+        <div class="row" id="section-four-header">
+            <div class="col-12 col-sm-8 offset-sm-2 col-xl-12 offset-xl-0">
+                <h5>RUN A QUICK ENERGY CHECK AND SEE HOW MUCH YOU COULD SAVE</h5>
+            </div>
+        </div>
+
+        <div class="row" id="section-four-secondary-header">
+            <div class="col-12 col-sm-8 offset-sm-2 col-xl-12 offset-xl-0">
+                <p>Never worry about your energy bills again. We've got you covered.</p>
+            </div>
+        </div>
+
+        <div class="row" id="section-four-form">
+            <div class="col-sm-8 offset-sm-2 col-xl-12 offset-xl-0">
+                {% set form = quote_form.createView %}
+                {{ form_start(form) }}
+                <div class="row">
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            {{ form_widget(form.postcode) }}
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            {{ form_widget(form.email) }}
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        {{ form_widget(form.submit) }}
+                    </div>
+
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+
+
+        <div class="row" id="section-four-footer">
+            <div class="col-12 col-sm-8 offset-sm-2 col-xl-12 offset-xl-0">
+                <span>&#42;Your information will never be shared without your permission</span>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-sm-5 offset-sm-2 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Company</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>How it works</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>About Us</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>FAQs</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Careers</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Staff Login</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-0 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Switch</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Gas</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Electricity</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text to-top">
+                            <a><span>Switch Dual Fuel</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Energy Suppliers</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-2 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Legal</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Terms and conditions</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Privacy Policy</span></a>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>Cookie Policy</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-5 offset-sm-0 offset-lg-0 col-lg-3 footer-column">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h4 class="footer-link-title">Contact</h4>
+                        </div>
+
+                        <div class="col-12 footer-link-text">
+                            <a><span>0800 000 0000</span></a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12" id="footer-ltd">
+                    <span>SWITCHBOO LTD is a registered company in England & Wales. (Reg no: 1234567)</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

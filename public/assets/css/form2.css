@@ -65,6 +65,10 @@ select {
 }
 
 @media (max-width: 575.98px) {
+
+    .per-container {
+        margin-top: 4px;
+    }
     
     .d-hide {
         display: block;
@@ -82,7 +86,11 @@ select {
     
     .per-year {
         margin-top: -15px;
-    } 
+    }
+
+    .form-split h6 {
+        white-space: nowrap;
+    }
     
 }
 

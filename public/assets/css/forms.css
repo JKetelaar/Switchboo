@@ -131,6 +131,33 @@ a.navbar-brand img:hover {
 }
 
 
+
+.type-button {
+    padding-top: 10px;
+    width: 100%;
+    height: calc(1.8em + .75rem + 2px);
+    background-color: #f7f7f7;
+    color: black;
+    border: none !Important;
+    font-family: oscine, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.type-button.active {
+    background-color: #ff0a9a !Important;
+    color: white;
+}
+
+.type-button:hover {
+    background-color: #ff0a9a !Important;
+}
+
+.type-button:focus {
+    box-shadow: none !Important;
+}
+
 .round-button-circle:hover {
     cursor:pointer;
     color: white;
@@ -307,7 +334,7 @@ select::-ms-expand {
     }
 
     #nav-brand a {
-        margin-right: 680px;
+        margin-right: 930px;
     }
 
     #nav-brand img {
@@ -325,16 +352,19 @@ select::-ms-expand {
     .navbar form a {
         position: absolute;
         text-align: center;
-        margin-left: 300px;
+        margin-left: 410px;
     }
 
 
 
+    .form-check .row .col-6:last-child .type-button {
+        margin-left: -40px;
+    }
 
 
 
     #form-control {
-        max-width: 700px;
+        max-width: 960px;
         width: 100%;
         margin: auto;
     }
@@ -354,8 +384,8 @@ select::-ms-expand {
 
 
     .round-button-circle {
-        width: 90% !Important;
-        padding-bottom: 90% !Important;
+        width: 70% !Important;
+        padding-bottom: 70% !Important;
     }
 
 

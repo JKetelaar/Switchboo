@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Switchboo - {% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.typekit.net/qzx6drd.css">
+
+    {% block stylesheets %}
+        <link href="{{ asset('assets/css/main-new.css') }}" rel="stylesheet">
+    {% endblock %}
+    <link href="{{ asset('assets/vendor/fontawesome/font-awesome.css') }}" rel="stylesheet">
+</head>
+<body>
+
+{% block navigation %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md bg-white static-top no-padding-bottom">
+        <div class="container-fluid">
+
+            <div class="row">
+
+
+                <div class="col-6 col-md-3 offset-md-1 col-lg-3 offset-lg-2 col-xl-2 offset-xl-0">
+                    <a class="navbar-brand black" href="#">
+                        <img src="{{ asset('assets/images/switchboo_pink.png') }}" class="img-fluid"/>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-8 col-lg-7 col-xl-10" id="navbar-toggler">
+
+                    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link black" href="#"><span>How it works</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link black" href="#"><span>About Us</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link black" href="#"><span>FAQs</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link black" href="#"><span>Contact</span></a>
+                            </li>
+                        </ul>
+                        <span class="navbar-text">
+                    <span>0800 000 0000</span>
+                </span>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+<script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/jquery/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

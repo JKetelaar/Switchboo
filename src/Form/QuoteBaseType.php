@@ -18,12 +18,12 @@ class QuoteBaseType extends AbstractType
             ->add(
                 'postcode',
                 TextType::class,
-                ['attr' => ['placeholder' => 'Your postcode', 'class' => 'form-control']]
+                ['attr' => ['placeholder' => 'YOUR POSTCODE', 'class' => 'form-control']]
             )
             ->add(
                 'email',
                 EmailType::class,
-                ['attr' => ['placeholder' => 'Your email', 'class' => 'form-control']]
+                ['attr' => ['placeholder' => 'YOUR EMAIL', 'class' => 'form-control']]
             )
             ->add(
                 'submit',

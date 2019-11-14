@@ -1,23 +1,23 @@
 ::-webkit-input-placeholder {
     font-family: oscine, sans-serif;
-	font-weight: 700;
-	font-style: italic;
+    font-weight: 700;
+    font-style: italic;
     font-size: 14px;
 }
 ::-moz-placeholder {
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: italic;
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: italic;
     font-size: 14px;
 }
 :-ms-input-placeholder {
     font-family: oscine, sans-serif;
-	font-weight: 700;
-	font-style: italic;
+    font-weight: 700;
+    font-style: italic;
     font-size: 14px;
 }
 ::placeholder {
     font-family: oscine, sans-serif;
-	font-weight: 700;
-	font-style: italic;
+    font-weight: 700;
+    font-style: italic;
     font-size: 14px;
 }
 
@@ -37,8 +37,8 @@ h3, h5 {
 
 body {
     font-family: oscine, sans-serif;
-	font-weight: 400;
-	font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     background-color: #f7f7f7;
 }
 
@@ -74,21 +74,21 @@ body {
 }
 
 .navbar-brand {
-        max-width: 40%;
+    max-width: 40%;
 }
 
 .custom-toggler.navbar-toggler {
     border-color: #ff0a9a00;
 }
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 10, 154)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 10, 154)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .nav-item {
     height: 55px;
-	font-family: oscine, sans-serif;
-	font-weight: 700;
-	font-style: normal;
+    font-family: oscine, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .nav-item a {
@@ -125,6 +125,9 @@ body {
     color: #ff0b9a !Important;
 }
 
+#nav-login {
+    color: #ff0b9a !Important;
+}
 .nav-link {
     font-weight: 700;
 }
@@ -135,9 +138,9 @@ body {
     color: #ff0b9a;
     font-weight: 700;
     font-size: 17px;
-	font-family: oscine, sans-serif;
-	font-weight: 700;
-	font-style: normal;
+    font-family: oscine, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -153,9 +156,9 @@ body {
 #section-one-container {
     padding-top: 40px;
     padding-bottom: 55px;
-    
-     clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
-    
+
+    clip-path: polygon(0 0,100% 0,100% calc(100% - 2vw),0 100%);
+
     /*
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
@@ -166,9 +169,9 @@ body {
 
 #section-one-text {
     font-family: oscine, sans-serif;
-	font-weight: 800;
-	font-style: normal;
-    
+    font-weight: 800;
+    font-style: normal;
+
 }
 
 
@@ -179,16 +182,16 @@ body {
 #section-one-text > h4 {
     font-family: oscine, sans-serif;
     font-style: normal;
+    font-size: 1rem;
     font-weight: 400;
-    font-size: 1.3rem;
     margin-top: 18px;
 }
 
 #section-one-form h4 {
     color:white;
     font-family: oscine, sans-serif;
-	font-weight: 800;
-	font-style: normal;
+    font-weight: 800;
+    font-style: normal;
     margin-bottom: 22px;
     margin-top: 15px;
     font-size: 1.2rem;
@@ -202,7 +205,7 @@ body {
     color: #484848;
     border: none;
     height: calc(2.4em + .75rem + 2px);
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
 }
 
 #section-one-form button {
@@ -226,13 +229,17 @@ body {
     margin-top: -20px;
     padding-top: 50px;
     padding-bottom: 80px;
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
-    
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
+
+}
+
+#section-two-header {
+    padding-left: 0px;
 }
 
 
 #section-two-header h3 {
-    margin-left: 10px;
+    margin-left: 0px;
     margin-bottom: 30px;
 }
 
@@ -244,7 +251,7 @@ body {
     background-color: black;
     border-radius: 0px;
     border: none;
-    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
+    font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
     margin-left: -5px;
 }
 
@@ -258,12 +265,12 @@ body {
 .card-title {
     font-size: 3rem;
     color: #ff0a9a;
-    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
     margin-bottom: 20px;
 }
 
 .card-text {
-    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     margin-bottom: -10px;
 }
 
@@ -275,12 +282,12 @@ body {
     padding-bottom: 100px;
     background-color: white;
     clip-path: polygon(0 calc(1% + 2vw), 100% 0, 100% 100%, 0% 100%);
-    
+
 }
 
 #section-three-header {
     color: #ff0b9a;
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     margin-bottom: 20px;
 }
 
@@ -308,7 +315,7 @@ body {
 .card-header h5 a {
     color: black;
     text-decoration: none;
-    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
 }
 
 .card-header h5 a:hover {
@@ -326,8 +333,8 @@ body {
 
 
 .mb-0 > a {
-  display: block;
-  position: relative;
+    display: block;
+    position: relative;
 }
 .mb-0 > a:before {
     content: "\f054"; /* fa-chevron-down */
@@ -338,7 +345,7 @@ body {
 .mb-0 > a[aria-expanded="true"]:before {
     content: "\f077"; /* fa-chevron-up */
     color: #ff0b9a;
-    
+
 }
 
 
@@ -352,20 +359,21 @@ body {
     padding-top: 100px;
     padding-bottom: 80px;
     clip-path: polygon(0 calc(1% + 2vw), 100% 0, 100% 100%, 0% 100%);
-    
+
 }
 
 #section-four-header {
-    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: normal;
     color: white;
 }
 
 #section-four-secondary-header {
     margin-top: 10px;
-    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     color: white;
     font-size: 16px;
 }
+
 
 
 #section-four-container input {
@@ -376,7 +384,7 @@ body {
     color: #484848;
     border: none;
     height: calc(2.4em + .75rem + 2px);
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     padding-left: 20px;
 }
 
@@ -387,14 +395,14 @@ body {
     background-color: black;
     border-radius: 0px;
     border: none;
-    	font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
+    font-family: oscine, sans-serif; 	font-weight: 800; 	font-style: italic;
 }
 
 
 #section-four-footer {
     margin-top: 30px;
-    font-family: oscine, sans-serif; 	
-    font-weight: 400; 	
+    font-family: oscine, sans-serif;
+    font-weight: 400;
     font-style: normal;
     color: white;
     font-size: 16px;
@@ -413,13 +421,13 @@ body {
 }
 
 .footer-link-title {
-    	font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 700; 	font-style: normal;
     color: #ff0b9a;
     margin-bottom: 14px;
 }
 
 .footer-link-text {
-    	font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
+    font-family: oscine, sans-serif; 	font-weight: 400; 	font-style: normal;
     color: black;
     margin-bottom: 5px;
     font-size: 18px;
@@ -450,36 +458,36 @@ body {
 
 
 @media (max-width: 575.98px) {
-    
+
     #navbar-toggler {
         text-align: right;
     }
-    
+
     .navbar-toggler {
         font-size: 25px;
     }
-    
+
     .navbar-collapse {
         width: 100%;
         float: left;
-        margin-left: -50vw;
+        margin-left: -53vw;
         margin-top: 30px;
         text-align: left;
     }
-    
+
     .navbar-brand {
         max-width: 90%;
     }
-    
+
     .footer-column {
         margin-bottom: 30px;
     }
-    
+
     #section-two-button button {
-        margin-left: 0px; 
+        margin-left: 0px;
     }
-    
-    
+
+
     #section-four-container input {
         margin-left: 0px !Important;
     }
@@ -487,59 +495,59 @@ body {
     #section-four-container button {
         margin-left: 0px !Important;
     }
-    
-    
-    
+
+
+
     #section-one-form h4 {
         margin-top: 40px !Important;
         font-size: 1.4rem !Important;
     }
-    
+
     #section-one-form button {
         margin-bottom: 25px;
     }
-    
+
 }
 
 
 @media (max-width: 767.98px) {
-        
+
     .nav-link {
         padding-top: 15px;
     }
-    
+
     .nav-item a {
         padding-left: 10px !Important;
     }
-    
-    
+
+
     .navbar-text {
         margin-left: 0px !Important;
     }
-    
-    
+
+
     .no-padding-bottom {
         padding-bottom: 20px;
     }
-    
+
 }
 
 
 @media (max-width: 991.98px) {
-    
+
     .card {
         min-width: 40% !Important;
     }
-    
+
     #section-two-header h3 {
         text-align: center;
     }
-    
+
     #section-one-text h4 br {
         display: none;
     }
-    
-    
+
+
     #section-one-form h4 {
         font-size: 1.0rem;
     }
@@ -570,11 +578,11 @@ body {
     .navbar-expand-md .navbar-nav .nav-link {
         margin-right: .5rem !Important;
         margin-left: .5rem !Important;
-        
+
         padding-right: 0px;
         padding-left: 0px;
     }
-    
+
     .navbar-brand {
         max-width: 90%;
         margin-top: 10px;
@@ -586,7 +594,7 @@ body {
 
     #section-one-container .row {
         margin:auto;
-        max-width: 950px;
+        max-width: 960px;
     }
 
     .navbar .container-fluid {
@@ -594,7 +602,7 @@ body {
     }
 
     .navbar-brand {
-        width: 200px;
+        width: 170px;
         max-width: max-content !Important;
     }
 
@@ -603,10 +611,115 @@ body {
         margin: auto;
     }
 
+    #nav-row {
+        width: 100%;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #navbarResponsive {
+        margin-right: -8px;
+    }
+
+    #section-one-text {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .navbar-nav {
+        margin-top: 14px;
+        margin-bottom: 10px;
+    }
+
+    #section-four-form, #section-four-secondary-header, #section-four-header, #section-four-footer {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    #footer .container {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    #section-two-works {
+        max-width: 960px;
+        margin: auto;
+    }
+
+
+}
+
+#quote_base_submit {
+    margin-top: 0px !Important;
 }
 
 
+.section-two-circle {
+    margin-top: 15px;
+    max-width: 110px;
+}
 
+.round-button-circle {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ece9e9;
+}
 
+.round-button-circle.active {
+    background-color: #ff0b9a;
+    color: white !Important;
+}
+.round-button-circle a {
+    display:block;
+    float:left;
+    width:100%;
+    padding-top: 54%;
+    padding-bottom:50%;
+    line-height:1em;
+    margin-top:-0.5em;
+    text-align:center;
+    color: black;
+    font-family:"oscine";
+    font-weight: 800;
+    font-size:2rem;
+}
 
+.hiw-title {
+    font-weight: 600;
+    color: black;
+    padding-top: 1rem;
+}
 
+.hiw-title span {
+    color: #ff0b9a;
+}
+
+.hiw-container {
+    padding-top: 15px;
+}
+
+.hiw-icon {
+    font-size: 4rem;
+    color: #ff0b9a38;
+}
+
+.hiw-body {
+    padding-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.hiw-container .row {
+    background-color: white;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}

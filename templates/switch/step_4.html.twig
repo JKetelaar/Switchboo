@@ -3,6 +3,7 @@
 {% block title %}Step 4{% endblock %}
 
 {% block stylesheets %}
+    <script src="{{ asset('https://kit.fontawesome.com/28d22f76c2.js') }}" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/forms.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/form4.css') }}" rel="stylesheet">
 {% endblock %}
@@ -183,19 +184,149 @@
                 <!-- end of fifth question -->
 
 
-                <!-- sixth question -->
                 <div class="row question-row">
                     <div class="col-12 question-title">
-                        <h5>Is there any special requirements in the household</h5>
+                        <h5>Additional Information</h5>
                     </div>
 
-                    <div class="col-12 col-md-3">
-                        <input type="text" class="form-control" id="" placeholder="optional">
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">Would you like to receive correspondence about your switch by email?
+                            (E.ON may also use these details to write to you about your account once your switch is complete)
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button active round-button-circle">
+                                        <input class="display-hide" type="radio" name="abc"
+                                               value="1" checked>
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="abc"
+                                               value="0">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            E.ON has a Priority Service Register.
+                            The service is for anyone in your household who is of pensionable age,
+                            is registered as disabled, is long term sick, has a sight or hearing difficulty,
+                            or uses illness related equipment that may need electricity.
+                            Do you have any special conditions that you would like us to make E.ON aware of?
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="def"
+                                               value="1">
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary active type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="def"
+                                               value="0" checked>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            With your consent E.ON will share some of your information with the company responsible for getting the
+                            energy to your house. You'll get extra support from them when you need it, such as when there is a planned
+                            gas or electricity outage. Do you give consent for your information to be shared by E.ON with your local
+                            network operator?
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary active type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="ghi"
+                                               value="1" checked>
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="ghi"
+                                               value="0">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            Can E.ON use your email address to send you details about important changes to your account,
+                            such as direct debit, price changes and contractual information?
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary active type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="jkl"
+                                               value="1" checked>
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="jkl"
+                                               value="0">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            Please select 'yes' if you'd like us to contact you in future by email,
+                            SMS, or phone, about further ways in which you could save money.
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary active type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="mno"
+                                               value="1" checked>
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <label class="btn btn-primary type-button round-button-circle">
+                                        <input class="display-hide" type="radio" name="mno"
+                                               value="0">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
                 </div>
-                <!-- end of sixth question -->
+
+
+
+
 
 
                 <!-- seventh question -->
