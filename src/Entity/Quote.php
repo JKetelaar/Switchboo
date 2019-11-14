@@ -17,6 +17,13 @@ class Quote
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $token;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $postcode;
@@ -394,6 +401,25 @@ class Quote
     public function setSelectedElecSpend(?bool $selectedElecSpend): self
     {
         $this->selectedElecSpend = $selectedElecSpend;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string $token
+     * @return Quote
+     */
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
 
         return $this;
     }

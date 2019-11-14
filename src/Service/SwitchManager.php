@@ -29,6 +29,11 @@ class SwitchManager
     private $apiKey;
 
     /**
+     * @var Quote
+     */
+    private $quote;
+
+    /**
      * SwitchManager constructor.
      * @param string $url
      * @param string $apiKey
@@ -39,10 +44,10 @@ class SwitchManager
         $this->apiKey = $apiKey;
     }
 
-    public function getSuppliers(string $postcode): array
+    public function getSuppliers(): array
     {
         $suppliers = [];
-        $content = $this->getCurrentSupplies($postcode);
+        $content = $this->getCurrentSupplies();
 
         foreach ($content['fuels']['electricity']['suppliers'] as $supplierJSON) {
             $supplier = new Supplier($supplierJSON['id'], $supplierJSON['logo']['uri'], $supplierJSON['name']);
@@ -60,10 +65,9 @@ class SwitchManager
         return $suppliers;
     }
 
-    private function getCurrentSupplies(string $postcode): array
+    private function getCurrentSupplies(): array
     {
-        $postcodeRequest = $this->createPostcodeRequest($postcode);
-        $currentSupply = $postcodeRequest['links'][2]['uri'];
+        $currentSupply = '/domestic/energy/switches/'.$this->getToken().'/current-supply';
         $currentSupplyContent = $this->getContent($currentSupply);
         $switchesCurrentSupply = $currentSupplyContent['linked-data'][0]['uri'];
         $content = $this->getContent($switchesCurrentSupply);
@@ -71,9 +75,13 @@ class SwitchManager
         return $content;
     }
 
-    private function createPostcodeRequest(string $postcode): array
+    private function getToken(): string
     {
-        return $this->getContent(
+        if ($this->quote->getToken() !== null) {
+            return $this->quote->getToken();
+        }
+
+        $content = $this->getContent(
             '/domestic/energy/switches',
             'POST',
             [
@@ -86,7 +94,7 @@ class SwitchManager
                                         [
                                             0 =>
                                                 [
-                                                    'data' => $postcode,
+                                                    'data' => $this->quote->getPostcode(),
                                                     'name' => 'postcode',
                                                 ],
                                         ],
@@ -108,6 +116,10 @@ class SwitchManager
                     ],
             ]
         );
+
+        $this->quote->setToken($this->getContent($content['links'][0]['uri'])['id']);
+
+        return $this->quote->getToken();
     }
 
     private function getContent(string $path, string $method = 'GET', array $data = []): array
@@ -135,10 +147,10 @@ class SwitchManager
         return json_decode($request->getBody()->getContents(), true);
     }
 
-    public function getPaymentMethods(string $postcode, bool $raw = false): array
+    public function getPaymentMethods(bool $raw = false): array
     {
         $paymentMethods = [];
-        $content = $this->getCurrentSupplies($postcode);
+        $content = $this->getCurrentSupplies();
 
         foreach ($content['paymentMethods'] as $paymentMethod) {
             if (!$raw) {
@@ -155,18 +167,15 @@ class SwitchManager
         return $paymentMethods;
     }
 
-    public function getFutureSupplies(Quote $quote)
+    public function getFutureSupplies()
     {
-        $postcode = $quote->getPostcode();
         $futureSupplies = [];
-        $postcodeRequest = $this->createPostcodeRequest($postcode);
-        $currentSupply = $postcodeRequest['links'][0]['uri'];
-        $link = parse_url($currentSupply);
-        $link['path'] .= '/future-supplies';
 
-        $this->updateUsage($quote, $currentSupply);
+        $this->updateUsage();
 
-        $futureSuppliesResults = $this->getContent($this->unparse_url($link))['results'];
+        $futureSuppliesResults = $this->getContent(
+            '/domestic/energy/switches/'.$this->getToken().'/future-supplies'
+        )['results'];
 
         foreach ($futureSuppliesResults as $futureSuppliesResult) {
             foreach ($futureSuppliesResult['energySupplies'] as $futureSupply) {
@@ -190,25 +199,21 @@ class SwitchManager
         return $futureSupplies;
     }
 
-    public function updateUsage(Quote $quote, string $link)
+    public function updateUsage()
     {
-        $data = UsageConverter::templateToData($quote);
-        $usage = $this->getContent($link)['links'][3]['uri'];
-        $this->getContent($usage, 'PUT', $data);
+        $data = UsageConverter::templateToData($this->quote);
+        $this->getContent(
+            '/domestic/energy/switches/'.$this->getToken().'/usage',
+            'PUT',
+            $data
+        );
     }
 
-    private function unparse_url($parsed_url)
+    /**
+     * @param Quote $quote
+     */
+    public function setQuote(Quote $quote): void
     {
-        $scheme = isset($parsed_url['scheme']) ? $parsed_url['scheme'].'://' : '';
-        $host = isset($parsed_url['host']) ? $parsed_url['host'] : '';
-        $port = isset($parsed_url['port']) ? ':'.$parsed_url['port'] : '';
-        $user = isset($parsed_url['user']) ? $parsed_url['user'] : '';
-        $pass = isset($parsed_url['pass']) ? ':'.$parsed_url['pass'] : '';
-        $pass = ($user || $pass) ? "$pass@" : '';
-        $path = isset($parsed_url['path']) ? $parsed_url['path'] : '';
-        $query = isset($parsed_url['query']) ? '?'.$parsed_url['query'] : '';
-        $fragment = isset($parsed_url['fragment']) ? '#'.$parsed_url['fragment'] : '';
-
-        return "$scheme$user$pass$host$port$path$query$fragment";
+        $this->quote = $quote;
     }
 }

@@ -126,13 +126,15 @@ class SwitchController extends AbstractController
             return $this->redirectToHome();
         }
 
+        $switchManager->setQuote($quote);
+
         $suppliers = null;
         $options = [];
         if ($currentStep === 1) {
             $suppliers = [];
             $plans = [];
             /** @var Supplier $supplier */
-            foreach ($switchManager->getSuppliers($quote->getPostcode()) as $supplier) {
+            foreach ($switchManager->getSuppliers() as $supplier) {
                 $suppliers[$supplier->getName()] = $supplier->getId();
                 foreach ($supplier->getPlans() as $plan) {
                     $plans[$plan->getName()] = $plan->getId();
@@ -142,9 +144,9 @@ class SwitchController extends AbstractController
             $options['suppliers'] = $suppliers;
             $options['plans'] = $plans;
         } elseif ($currentStep === 2) {
-            $options['payment_methods'] = $switchManager->getPaymentMethods($quote->getPostcode());
+            $options['payment_methods'] = $switchManager->getPaymentMethods();
         } elseif ($currentStep === 3) {
-            $suppliers = $switchManager->getFutureSupplies($quote);
+            $suppliers = $switchManager->getFutureSupplies();
             $options['suppliers'] = $suppliers;
         }
 
@@ -194,7 +196,6 @@ class SwitchController extends AbstractController
                 'form' => $form->createView(),
                 'suppliers' => $suppliers,
                 'payment_methods' => ($currentStep === 3 ? $switchManager->getPaymentMethods(
-                    $quote->getPostcode(),
                     true
                 ) : null),
             ]

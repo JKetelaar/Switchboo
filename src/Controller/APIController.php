@@ -28,10 +28,11 @@ class APIController extends AbstractController
     public function plans(Request $request, SwitchManager $switchManager, int $supplierID)
     {
         $quote = $this->getQuote($request);
-        $postcode = $quote->getPostcode();
         $plans = [];
+        $switchManager->setQuote($quote);
+
         /** @var Supplier[] $suppliers */
-        $suppliers = $switchManager->getSuppliers($postcode);
+        $suppliers = $switchManager->getSuppliers();
         foreach ($suppliers as $supplier) {
             if ($supplier->getId() === $supplierID) {
                 $plans = $supplier->getPlans();

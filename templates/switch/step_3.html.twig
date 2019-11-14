@@ -56,9 +56,9 @@
 
         <div class="row">
             <div class="col-10 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2 offset-1" id="form-control">
+                {{ form_start(form) }}
 
-
-                <div class="row result-row active">
+                <div class="row result-row active" data-id="{{ suppliers[0].id }}">
 
                     <!-- image column -->
                     <div class="col-12 col-md-4">
@@ -136,7 +136,7 @@
 
                         {% for supplier in suppliers %}
                             {% if loop.index > 1 %}
-                                <div class="row result-row">
+                                <div class="row result-row" data-id="{{ supplier.id }}">
 
                                     <!-- image column -->
                                     <div class="col-12 col-md-4">
@@ -212,20 +212,19 @@
                     </div>
                 {% endif %}
 
+                <input id="chosenSupplier" type="hidden" name="quote_step_three[chosenSupplier]"
+                       value="{{ suppliers[0].id }}">
 
                 <!-- next page button -->
                 <div class="row question-row">
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-5 offset-md-7 col-lg-5 offset-lg-7 col-xl-4 offset-xl-8">
-                        <a href="form-4.html">
-                            <button type="submit" class="btn btn-primary black-button"><span class="white-underline">SWITCH NOW</span>
-                            </button>
-                        </a>
+                        {{ form_widget(form.submit) }}
                         <p class="next-lower-text">Good on you!</p>
                     </div>
                 </div>
                 <!-- end of next page button -->
 
-
+                {{ form_end(form, {'render_rest': false}) }}
             </div>
 
         </div>
@@ -274,4 +273,10 @@
             crossorigin="anonymous"></script>
 
     <script src="{{ asset('assets/js/forms.js') }}"></script>
+
+    <script>
+        $('.result-row').on("click", function () {
+            $('#chosenSupplier').val($(this).data('id'));
+        });
+    </script>
 {% endblock %}

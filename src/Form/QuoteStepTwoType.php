@@ -93,7 +93,6 @@ class QuoteStepTwoType extends AbstractType
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
                 'payment_methods' => [],
-                'allow_extra_fields' => true,
             ]
         );
     }

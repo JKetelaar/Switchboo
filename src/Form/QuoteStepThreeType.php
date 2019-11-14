@@ -17,7 +17,7 @@ class QuoteStepThreeType extends AbstractType
         $suppliers = [];
         /** @var FutureSupply $supplier */
         foreach ($options['suppliers'] as $supplier) {
-            $suppliers[$supplier->getSupplier()] = $supplier->getSupplierId();
+            $suppliers[$supplier->getId()] = $supplier->getId();
         }
 
         $builder
