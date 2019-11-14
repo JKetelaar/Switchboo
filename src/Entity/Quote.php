@@ -101,6 +101,25 @@ class Quote
      */
     private $personalInformation;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $phoneNumber;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $selectedGasSpend;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $selectedElecSpend;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -226,9 +245,9 @@ class Quote
         }
     }
 
-    public function getGasMoneySpend(): ?float
+    public function getGasMoneySpend(): ?string
     {
-        return $this->gasMoneySpend;
+        return number_format($this->gasMoneySpend, 2);
     }
 
     public function setGasMoneySpend(?float $gasMoneySpend): self
@@ -262,9 +281,9 @@ class Quote
         return $this;
     }
 
-    public function getElecMoneySpend(): ?float
+    public function getElecMoneySpend(): ?string
     {
-        return $this->elecMoneySpend;
+        return number_format($this->elecMoneySpend, 2);
     }
 
     public function setElecMoneySpend(?float $elecMoneySpend): self
@@ -318,6 +337,63 @@ class Quote
     public function setPersonalInformation(?PersonalInformation $personalInformation): self
     {
         $this->personalInformation = $personalInformation;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * @param string $phoneNumber
+     * @return Quote
+     */
+    public function setPhoneNumber(?string $phoneNumber): self
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSelectedGasSpend(): ?bool
+    {
+        return $this->selectedGasSpend;
+    }
+
+    /**
+     * @param bool $selectedGasSpend
+     * @return Quote
+     */
+    public function setSelectedGasSpend(?bool $selectedGasSpend): self
+    {
+        $this->selectedGasSpend = $selectedGasSpend;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSelectedElecSpend(): ?bool
+    {
+        return $this->selectedElecSpend;
+    }
+
+    /**
+     * @param bool $selectedElecSpend
+     * @return Quote
+     */
+    public function setSelectedElecSpend(?bool $selectedElecSpend): self
+    {
+        $this->selectedElecSpend = $selectedElecSpend;
 
         return $this;
     }

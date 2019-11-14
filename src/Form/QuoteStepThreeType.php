@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\API\FutureSupply;
 use App\Entity\Quote;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -13,16 +14,18 @@ class QuoteStepThreeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $suppliers = [];
+        /** @var FutureSupply $supplier */
+        foreach ($options['suppliers'] as $supplier) {
+            $suppliers[$supplier->getSupplier()] = $supplier->getSupplierId();
+        }
+
         $builder
             ->add(
                 'chosenSupplier',
                 ChoiceType::class,
                 [
-                    'choices' => [
-                        'British Gas' => 'britishGas',
-                        'SSE' => 'sse',
-                        'EDF' => 'edf',
-                    ],
+                    'choices' => $suppliers,
                 ]
             )
             ->add(
@@ -38,6 +41,7 @@ class QuoteStepThreeType extends AbstractType
             [
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
+                'suppliers' => [],
             ]
         );
     }

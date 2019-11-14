@@ -220,16 +220,16 @@
                     <div class="form-check">
                         <div class="row">
                             <div class="col-6 col-md-2">
-                                <label class="btn btn-primary type-button active round-button-circle">
+                                <label class="btn btn-primary type-button {% if form.economyMeter.vars.data == true %}active{% endif %} round-button-circle">
                                     <input class="display-hide" type="radio" name="quote_step_one[economyMeter]"
-                                           value="1" checked>
+                                           value="1" {% if form.economyMeter.vars.data == true %}checked{% endif %}>
                                     <span>Yes</span>
                                 </label>
                             </div>
                             <div class="col-6 col-md-2">
-                                <label class="btn btn-primary type-button round-button-circle">
+                                <label class="btn btn-primary type-button {% if form.economyMeter.vars.data == false %}active{% endif %} round-button-circle">
                                     <input class="display-hide" type="radio" name="quote_step_one[economyMeter]"
-                                           value="0">
+                                           value="0" {% if form.economyMeter.vars.data == false %}checked{% endif %}>
                                     <span>No</span>
                                 </label>
                             </div>

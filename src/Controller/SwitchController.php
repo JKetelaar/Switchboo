@@ -126,6 +126,7 @@ class SwitchController extends AbstractController
             return $this->redirectToHome();
         }
 
+        $suppliers = null;
         $options = [];
         if ($currentStep === 1) {
             $suppliers = [];
@@ -140,14 +141,39 @@ class SwitchController extends AbstractController
             ksort($suppliers);
             $options['suppliers'] = $suppliers;
             $options['plans'] = $plans;
+        } elseif ($currentStep === 2) {
+            $options['payment_methods'] = $switchManager->getPaymentMethods($quote->getPostcode());
+        } elseif ($currentStep === 3) {
+            $suppliers = $switchManager->getFutureSupplies($quote);
+            $options['suppliers'] = $suppliers;
         }
 
         $form = $this->createForm($formClass, $quote, $options);
 
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Quote $quote */
             $quote = $form->getData();
+
+            if ($currentStep === 2) {
+                if ($request->request->get('quote_step_two')['selectedGasSpend'] == '1') {
+                    $quote->setSelectedGasSpend(true);
+                    $quote->setGasUseKWH(null);
+                } else {
+                    $quote->setSelectedGasSpend(false);
+                    $quote->setGasMoneyPerType(null);
+                    $quote->setGasMoneySpend(null);
+                }
+                if ($request->request->get('quote_step_two')['selectedElecSpend'] == '1') {
+                    $quote->setSelectedElecSpend(true);
+                    $quote->setElecUseKWH(null);
+                } else {
+                    $quote->setSelectedElecSpend(false);
+                    $quote->setElecMoneyPerType(null);
+                    $quote->setElecMoneySpend(null);
+                }
+            }
 
             if ($request->request->get('quote_step_one') !== null && $request->request->get(
                     'quote_step_one'
@@ -161,10 +187,16 @@ class SwitchController extends AbstractController
             return $this->redirectToRoute('switch_step', ['step' => $nextStep]);
         }
 
+
         return $this->render(
             'switch/step_'.$currentStep.'.html.twig',
             [
                 'form' => $form->createView(),
+                'suppliers' => $suppliers,
+                'payment_methods' => ($currentStep === 3 ? $switchManager->getPaymentMethods(
+                    $quote->getPostcode(),
+                    true
+                ) : null),
             ]
         );
     }

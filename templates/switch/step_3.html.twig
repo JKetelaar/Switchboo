@@ -41,7 +41,8 @@
 
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center" id="step-text">
-                <h5>Wow you can save <span id="save-total">302.71</span> by switching over to <span id="new-supplier">British Gas</span>
+                <h5>Wow you can save <span id="save-total">{{ suppliers[0].savings }}</span> by switching over to <span
+                            id="new-supplier">{{ suppliers[0].supplier }}</span>
                 </h5>
                 <p>This is the cheapest deal available</p>
             </div>
@@ -66,7 +67,7 @@
                                 <h5 class="column-title supplier-title">Supplier</h5>
                             </div>
                             <div class="col-12">
-                                <div id="british-gas"></div>
+                                <img src="{{ suppliers[0].logo }}">
                             </div>
                         </div>
                     </div>
@@ -80,8 +81,8 @@
                                 <h5 class="column-title">Type</h5>
                             </div>
                             <div class="col-12">
-                                <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
-                                <p class="column-inner-text">12 months fixed plan</p>
+                                <p class="column-inner-text r-m-bottom">{{ suppliers[0].tariffType }}</p>
+                                <p class="column-inner-text">{{ payment_methods[suppliers[0].paymentType] }}</p>
 
                                 <p class="column-inner-text">
                                     <a id="direct-debit-guarantee" class="btn btn-primary" data-toggle="modal"
@@ -102,8 +103,8 @@
                                 <h5 class="column-title">Personal Projection</h5>
                             </div>
                             <div class="col-12">
-                                <p class="column-inner-text r-m-bottom">1050 per year</p>
-                                <p class="column-inner-text">87.50 per month</p>
+                                <p class="column-inner-text r-m-bottom">{{ suppliers[0].expectedSpend }} per year</p>
+                                <p class="column-inner-text">{{ suppliers[0].expectedSpendPerMonth }} per month</p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +118,7 @@
                                 <h5 class="column-title">Savings</h5>
                             </div>
                             <div class="col-12">
-                                <h5 class="column-price-value">302.71</h5>
+                                <h5 class="column-price-value">{{ suppliers[0].savings }}</h5>
                             </div>
                         </div>
                     </div>
@@ -125,153 +126,91 @@
 
                 </div>
 
-
-                <div class="row">
-                    <p id="view-more"><a>View more results</a></p>
-                </div>
-
-
-                <div class="hidden">
-
-                    <div class="row result-row">
-
-                        <!-- image column -->
-                        <div class="col-12 col-md-4">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title supplier-title">Supplier</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="SSE"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of image column -->
-
-
-                        <!-- type column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Type</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
-                                    <p class="column-inner-text">12 months fixed plan</p>
-
-                                    <p class="column-inner-text">
-                                        <a id="direct-debit-guarantee" class="btn btn-primary" data-toggle="modal"
-                                           data-target="#myModal">
-                                            <span>View tariff details</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of type column -->
-
-
-                        <!-- personal projection column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Personal Projection</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">1050 per year</p>
-                                    <p class="column-inner-text">87.50 per month</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of personal projection column -->
-
-
-                        <!-- savings column -->
-                        <div class="col-12 col-md-2">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Savings</h5>
-                                </div>
-                                <div class="col-12">
-                                    <h5 class="column-price-value">213.12</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of savings column -->
-
+                {% if suppliers | length > 1 %}
+                    <div class="row">
+                        <p id="view-more"><a>View more results</a></p>
                     </div>
 
 
-                    <div class="row result-row">
+                    <div class="hidden">
 
-                        <!-- image column -->
-                        <div class="col-12 col-md-4">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title supplier-title">Supplier</h5>
-                                </div>
-                                <div class="col-12">
-                                    <div id="EDF"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of image column -->
+                        {% for supplier in suppliers %}
+                            {% if loop.index > 1 %}
+                                <div class="row result-row">
 
-
-                        <!-- type column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Type</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">Monthly Direct Debit</p>
-                                    <p class="column-inner-text">12 months fixed plan</p>
-
-                                    <p class="column-inner-text">
-                                        <a id="direct-debit-guarantee" class="btn btn-primary" data-toggle="modal"
-                                           data-target="#myModal">
-                                            <span>View tariff details</span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of type column -->
+                                    <!-- image column -->
+                                    <div class="col-12 col-md-4">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title supplier-title">Supplier</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <img src="{{ supplier.logo }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of image column -->
 
 
-                        <!-- personal projection column -->
-                        <div class="col-12 col-md-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Personal Projection</h5>
-                                </div>
-                                <div class="col-12">
-                                    <p class="column-inner-text r-m-bottom">1050 per year</p>
-                                    <p class="column-inner-text">87.50 per month</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of personal projection column -->
+                                    <!-- type column -->
+                                    <div class="col-12 col-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Type</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="column-inner-text r-m-bottom">{{ supplier.tariffType }}</p>
+                                                <p class="column-inner-text">{{ payment_methods[supplier.paymentType] }}</p>
+
+                                                <p class="column-inner-text">
+                                                    <a id="direct-debit-guarantee" class="btn btn-primary"
+                                                       data-toggle="modal"
+                                                       data-target="#myModal">
+                                                        <span>View tariff details</span>
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of type column -->
 
 
-                        <!-- savings column -->
-                        <div class="col-12 col-md-2">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="column-title">Savings</h5>
+                                    <!-- personal projection column -->
+                                    <div class="col-12 col-md-3">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Personal Projection</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <p class="column-inner-text r-m-bottom">{{ supplier.expectedSpend }} per
+                                                    year</p>
+                                                <p class="column-inner-text">{{ supplier.expectedSpendPerMonth }} per
+                                                    month</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of personal projection column -->
+
+
+                                    <!-- savings column -->
+                                    <div class="col-12 col-md-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="column-title">Savings</h5>
+                                            </div>
+                                            <div class="col-12">
+                                                <h5 class="column-price-value">{{ supplier.savings }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of savings column -->
+
                                 </div>
-                                <div class="col-12">
-                                    <h5 class="column-price-value">105.21</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of savings column -->
+                            {% endif %}
+                        {% endfor %}
 
                     </div>
-
-
-                </div>
+                {% endif %}
 
 
                 <!-- next page button -->

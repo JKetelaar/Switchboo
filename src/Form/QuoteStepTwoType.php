@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,10 +20,7 @@ class QuoteStepTwoType extends AbstractType
                 'paymentType',
                 ChoiceType::class,
                 [
-                    'choices' => [
-                        'PayPal' => 'paypal',
-                        'CreditCard' => 'creditcard',
-                    ],
+                    'choices' => $options['payment_methods'],
                     'attr' => [
                         'class' => 'form-control selector',
                     ],
@@ -75,6 +73,13 @@ class QuoteStepTwoType extends AbstractType
                 ['attr' => ['class' => 'form-control', 'placeholder' => 'kWH'], 'required' => false]
             )
             ->add(
+                'phoneNumber',
+                TextType::class,
+                ['attr' => ['class' => 'form-control', 'placeholder' => 'Phone number']]
+            )
+            ->add('selectedGasSpend')
+            ->add('selectedElecSpend')
+            ->add(
                 'submit',
                 SubmitType::class,
                 ['attr' => ['class' => 'btn btn-primary black-button'], 'label' => 'NEXT PAGE']
@@ -87,6 +92,8 @@ class QuoteStepTwoType extends AbstractType
             [
                 'data_class' => Quote::class,
                 'csrf_protection' => false,
+                'payment_methods' => [],
+                'allow_extra_fields' => true,
             ]
         );
     }
