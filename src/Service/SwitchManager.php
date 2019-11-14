@@ -9,8 +9,10 @@ use App\Entity\API\FutureSupply;
 use App\Entity\API\Plan;
 use App\Entity\API\Supplier;
 use App\Entity\Quote;
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class SwitchManager
@@ -44,6 +46,11 @@ class SwitchManager
         $this->apiKey = $apiKey;
     }
 
+    /**
+     * @return array
+     * @throws GuzzleException
+     * @throws SwitchException
+     */
     public function getSuppliers(): array
     {
         $suppliers = [];
@@ -65,6 +72,11 @@ class SwitchManager
         return $suppliers;
     }
 
+    /**
+     * @return array
+     * @throws GuzzleException
+     * @throws SwitchException
+     */
     private function getCurrentSupplies(): array
     {
         $currentSupply = '/domestic/energy/switches/'.$this->getToken().'/current-supply';
@@ -75,6 +87,11 @@ class SwitchManager
         return $content;
     }
 
+    /**
+     * @return string
+     * @throws GuzzleException
+     * @throws SwitchException
+     */
     private function getToken(): string
     {
         if ($this->quote->getToken() !== null) {
@@ -122,6 +139,15 @@ class SwitchManager
         return $this->quote->getToken();
     }
 
+    /**
+     * @param string $path
+     * @param string $method
+     * @param array $data
+     * @return array
+     * @throws SwitchException
+     * @throws GuzzleException
+     * @throws Exception
+     */
     private function getContent(string $path, string $method = 'GET', array $data = []): array
     {
         $options = [
@@ -141,12 +167,25 @@ class SwitchManager
                 $options
             );
         } catch (ClientException $e) {
-            throw new \Exception($e->getResponse()->getBody()->getContents());
+            $json = json_decode($e->getResponse()->getBody()->getContents(), true);
+            if (isset($json['errors'])) {
+                $errors = [];
+                foreach ($json['errors'] as $error) {
+                    $errors[] = $error['message']['text'];
+                }
+
+                throw new SwitchException($errors);
+            }
+            throw new Exception($e->getResponse()->getBody()->getContents());
         }
 
         return json_decode($request->getBody()->getContents(), true);
     }
 
+    /**
+     * @param bool $raw
+     * @return array
+     */
     public function getPaymentMethods(bool $raw = false): array
     {
         $paymentMethods = [];
@@ -167,6 +206,11 @@ class SwitchManager
         return $paymentMethods;
     }
 
+    /**
+     * @return array
+     * @throws GuzzleException
+     * @throws SwitchException
+     */
     public function getFutureSupplies()
     {
         $futureSupplies = [];
@@ -199,6 +243,10 @@ class SwitchManager
         return $futureSupplies;
     }
 
+    /**
+     * @throws GuzzleException
+     * @throws SwitchException
+     */
     public function updateUsage()
     {
         $data = UsageConverter::templateToData($this->quote);

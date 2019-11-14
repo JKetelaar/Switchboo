@@ -48,6 +48,7 @@ class HomeController extends AbstractController
             'home/index.html.twig',
             [
                 'quote_form' => $form,
+                'errors' => $request->get('errors')
             ]
         );
     }

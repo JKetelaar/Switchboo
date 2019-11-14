@@ -6,6 +6,7 @@ use App\Entity\API\Supplier;
 use App\Entity\PersonalInformation;
 use App\Entity\Quote;
 use App\Form\QuoteStepFourType;
+use App\Service\SwitchException;
 use App\Service\SwitchManager;
 use NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -89,11 +90,12 @@ class SwitchController extends AbstractController
     }
 
     /**
+     * @param array|null $errors
      * @return RedirectResponse
      */
-    private function redirectToHome(): RedirectResponse
+    private function redirectToHome(?array $errors = null): RedirectResponse
     {
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('home', ['errors' => $errors]);
     }
 
     /**
@@ -134,11 +136,15 @@ class SwitchController extends AbstractController
             $suppliers = [];
             $plans = [];
             /** @var Supplier $supplier */
-            foreach ($switchManager->getSuppliers() as $supplier) {
-                $suppliers[$supplier->getName()] = $supplier->getId();
-                foreach ($supplier->getPlans() as $plan) {
-                    $plans[$plan->getName()] = $plan->getId();
+            try {
+                foreach ($switchManager->getSuppliers() as $supplier) {
+                    $suppliers[$supplier->getName()] = $supplier->getId();
+                    foreach ($supplier->getPlans() as $plan) {
+                        $plans[$plan->getName()] = $plan->getId();
+                    }
                 }
+            } catch (SwitchException $e) {
+                return $this->redirectToHome($e->getErrors());
             }
             ksort($suppliers);
             $options['suppliers'] = $suppliers;

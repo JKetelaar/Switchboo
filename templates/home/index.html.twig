@@ -408,3 +408,13 @@
 
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+        {% if errors %}
+        {% for error in errors %}
+        toastr.error('{{ error | escape }}', 'Error', {timeOut: 5000})
+        {% endfor %}
+        {% endif %}
+    </script>
+{% endblock %}
