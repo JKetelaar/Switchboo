@@ -221,10 +221,20 @@ class SwitchManager
             '/domestic/energy/switches/'.$this->getToken().'/future-supplies'
         )['results'];
 
+        $currentDate = new \DateTime();
         foreach ($futureSuppliesResults as $futureSuppliesResult) {
             foreach ($futureSuppliesResult['energySupplies'] as $futureSupply) {
                 if ($futureSupply['canApply'] === true) {
                     if ($futureSupply['expectedAnnualSavings'] > 0) {
+                        if (isset($futureSupply['tariffEndDate'])) {
+                            $tariffEndDate = $futureSupply['tariffEndDate'];
+                            preg_match_all('/\d+/', $tariffEndDate, $matches);
+
+                            if ($matches[0][0] <= $currentDate->getTimestamp() * 1000) {
+                                continue;
+                            }
+                        }
+
                         $futureSupplies[] = FutureSupply::fromSupplierJSON($futureSupply);
                     }
                 }
