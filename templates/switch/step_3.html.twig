@@ -41,7 +41,7 @@
 
         <div class="row">
             <div class="col-md-6 offset-md-3 text-center" id="step-text">
-                <h5>Wow you can save <span id="save-total">{{ suppliers[0].savings }}</span> by switching over to <span
+                <h5>Wow you can save <span id="save-total">£ {{ suppliers[0].savings }}</span> by switching over to <span
                             id="new-supplier">{{ suppliers[0].supplier }}</span>
                 </h5>
                 <p>This is the cheapest deal available</p>
@@ -103,8 +103,8 @@
                                 <h5 class="column-title">Personal Projection</h5>
                             </div>
                             <div class="col-12">
-                                <p class="column-inner-text r-m-bottom">{{ suppliers[0].expectedSpend }} per year</p>
-                                <p class="column-inner-text">{{ suppliers[0].expectedSpendPerMonth }} per month</p>
+                                <p class="column-inner-text r-m-bottom">£ {{ suppliers[0].expectedSpend }} per year</p>
+                                <p class="column-inner-text">£ {{ suppliers[0].expectedSpendPerMonth }} per month</p>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                                 <h5 class="column-title">Savings</h5>
                             </div>
                             <div class="col-12">
-                                <h5 class="column-price-value">{{ suppliers[0].savings }}</h5>
+                                <h5 class="column-price-value">£ {{ suppliers[0].savings }}</h5>
                             </div>
                         </div>
                     </div>
@@ -182,9 +182,9 @@
                                                 <h5 class="column-title">Personal Projection</h5>
                                             </div>
                                             <div class="col-12">
-                                                <p class="column-inner-text r-m-bottom">{{ supplier.expectedSpend }} per
+                                                <p class="column-inner-text r-m-bottom">£ {{ supplier.expectedSpend }} per
                                                     year</p>
-                                                <p class="column-inner-text">{{ supplier.expectedSpendPerMonth }} per
+                                                <p class="column-inner-text">£ {{ supplier.expectedSpendPerMonth }} per
                                                     month</p>
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                                 <h5 class="column-title">Savings</h5>
                                             </div>
                                             <div class="col-12">
-                                                <h5 class="column-price-value">{{ supplier.savings }}</h5>
+                                                <h5 class="column-price-value">£ {{ supplier.savings }}</h5>
                                             </div>
                                         </div>
                                     </div>

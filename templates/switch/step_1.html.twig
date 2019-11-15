@@ -72,20 +72,20 @@
                         <div class="row">
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button active">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                    <input id="gas-and-electricity" class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
                                            value="1" checked>
                                     <span>Gas and Electricity</span>
                                 </label>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                    <input id="gas-only" class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
                                            value="2"> Gas only
                                 </label>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <label class="btn btn-primary type-button">
-                                    <input class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
+                                    <input id="electricity-only" class="display-hide" type="radio" name="quote_step_one[gasElectricityType]"
                                            value="3">
                                     Electricity only
                                 </label>
@@ -95,7 +95,7 @@
                 </div>
 
                 <!-- second question -->
-                <div class="row question-row">
+                <div class="row question-row gas-and-electricity dual-fuel">
                     <div class="col-12 question-title">
                         <h5>Do you have the same supplier for Gas and Electricity?</h5>
                         <p>This is called a Dual Fuel tariff</p>
@@ -105,14 +105,14 @@
                         <div class="row">
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button active round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
+                                    <input data-id="yes" class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
                                            value="1" checked>
                                     <span>Yes</span>
                                 </label>
                             </div>
                             <div class="col-6 col-md-2">
                                 <label class="btn btn-primary type-button round-button-circle">
-                                    <input class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
+                                    <input data-id="no" class="display-hide" type="radio" name="quote_step_one[sameSupplier]"
                                            value="0">
                                     <span>No</span>
                                 </label>
@@ -122,10 +122,11 @@
                 </div>
                 <!-- end of second question -->
 
+
                 <!-- third question -->
-                <div class="row question-row">
+                <div class="row question-row gas-and-electricity">
                     <div class="col-12 question-title">
-                        <h5>Who is your energy supplier?</h5>
+                        <h5>Who is your Energy supplier?</h5>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-4 supplier-container">
@@ -181,6 +182,129 @@
 
                 </div>
                 <!-- end of third question -->
+
+                <!-- third question -->
+                <div class="row question-row gas-supplier hide-element">
+                    <div class="col-12 question-title">
+                        <h5>Who is your Gas supplier?</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-british-gas"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-eon"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-edf"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-npower"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-scottish-power"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-sse"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="control-label">Can't see your supplier? Click here</p>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+
+                        <div class="form-group">
+                            {{ form_widget(form.energySupplier) }}
+                        </div>
+
+                    </div>
+
+                    <input type="text" hidden name="quote_step_one[energySupplierImage]" id="hiddenImageSelection">
+
+                </div>
+                <!-- end of third question -->
+
+
+                <!-- third question -->
+                <div class="row question-row electricity-supplier hide-element">
+                    <div class="col-12 question-title">
+                        <h5>Who is your Electricity supplier?</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-british-gas"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-eon"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-edf"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-npower"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-scottish-power"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 supplier-container">
+                        <div class="supplier-image">
+                            <div id="supplier-sse"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="control-label">Can't see your supplier? Click here</p>
+                    </div>
+
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-0">
+
+                        <div class="form-group">
+                            {{ form_widget(form.energySupplier) }}
+                        </div>
+
+                    </div>
+
+                    <input type="text" hidden name="quote_step_one[energySupplierImage]" id="hiddenImageSelection">
+
+                </div>
+                <!-- end of third question -->
+
+
 
                 <!-- fourth question -->
                 <div class="row question-row">
@@ -267,6 +391,7 @@
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/forms.js') }}"></script>
+    <script src="{{ asset('assets/js/form1.js') }}"></script>
 
     <script>
         const plans = $('#quote_step_one_plan');

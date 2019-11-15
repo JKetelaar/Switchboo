@@ -71,7 +71,7 @@
                                 <h6 class="row-title">Title</h6>
                             </div>
 
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-2">
                                 <select class="form-control selector">
                                     <option>mr</option>
                                     <option>mrs</option>
@@ -108,8 +108,14 @@
                                 <h6 class="row-title">Date of birth</h6>
                             </div>
 
-                            <div class="col-12 col-md-3">
-                                <input type="text" class="form-control" id="" placeholder="DD/MM/YYYY">
+                            <div class="col-4 col-md-1">
+                                <input type="text" class="form-control" id="" placeholder="DD">
+                            </div>
+                            <div class="col-4 col-md-2">
+                                <input type="text" class="form-control" id="" placeholder="MM">
+                            </div>
+                            <div class="col-4 col-md-2">
+                                <input type="text" class="form-control" id="" placeholder="YYYY">
                             </div>
                         </div>
 
@@ -154,12 +160,23 @@
                         <p>Electronic device in your home that records your consumption</p>
                     </div>
 
-                    <div class="col-6 col-md-2">
-                        <div class="round-button-circle"><a>Yes</a></div>
-                    </div>
-
-                    <div class="col-6 col-md-2">
-                        <div class="round-button-circle active"><a>No</a></div>
+                    <div class="form-check">
+                        <div class="row">
+                            <div class="col-6 col-md-2">
+                                <label class="btn btn-primary type-button round-button-circle">
+                                    <input class="display-hide" type="radio" name="xyz"
+                                           value="1">
+                                    <span>Yes</span>
+                                </label>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label class="btn btn-primary active type-button round-button-circle">
+                                    <input class="display-hide" type="radio" name="xyz"
+                                           value="0" checked>
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -172,16 +189,141 @@
                         <h5>Is your billing address the same as your supply address</h5>
                     </div>
 
-                    <div class="col-6 col-md-2">
-                        <div class="round-button-circle active"><a>Yes</a></div>
+                    <div class="form-check">
+                        <div class="row">
+                            <div class="col-6 col-md-2">
+                                <label class="btn btn-primary active type-button round-button-circle">
+                                    <input class="display-hide" type="radio" name="stu"
+                                           value="1" checked>
+                                    <span>Yes</span>
+                                </label>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label class="btn btn-primary type-button round-button-circle">
+                                    <input class="display-hide" type="radio" name="stu"
+                                           value="0">
+                                    <span>No</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-6 col-md-2">
-                        <div class="round-button-circle"><a>No</a></div>
-                    </div>
-
                 </div>
                 <!-- end of fifth question -->
+
+
+                <!-- first question -->
+                <div class="row question-row">
+                    <div class="col-12 question-title">
+                        <h5>Billing Address</h5>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            House or flat name/number
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            First line of address
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-7">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            Second line of address <span>(optional)</span>
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-7">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            Town <span>(optional)</span>
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-7">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            County <span>(optional)</span>
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-7">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 inner-question-container">
+                        <p class="inner-question-title">
+                            Time at this address
+                        </p>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="row question-row-inner">
+                                        <div class="col-12 col-md-7">
+                                            <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- end of first question -->
 
 
                 <div class="row question-row">
@@ -300,32 +442,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12 inner-question-container">
-                        <p class="inner-question-title">
-                            Please select 'yes' if you'd like us to contact you in future by email,
-                            SMS, or phone, about further ways in which you could save money.
-                        </p>
-                        <div class="form-check">
-                            <div class="row">
-                                <div class="col-6 col-md-2">
-                                    <label class="btn btn-primary active type-button round-button-circle">
-                                        <input class="display-hide" type="radio" name="mno"
-                                               value="1" checked>
-                                        <span>Yes</span>
-                                    </label>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <label class="btn btn-primary type-button round-button-circle">
-                                        <input class="display-hide" type="radio" name="mno"
-                                               value="0">
-                                        <span>No</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                 </div>
 

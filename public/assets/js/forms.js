@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
 
 
     $(document).on('click tap touchstart', '#quote_step_one_energySupplier', function (e) {

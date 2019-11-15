@@ -228,3 +228,12 @@
     right: 0;
     bottom: 0;
 }
+
+
+.hide-element {
+    display: none !Important;
+}
+
+.show-element {
+    display: flex !Important;
+}

@@ -51,11 +51,11 @@ input {
 }
 
 input {
-    margin-top: -6% !Important;
+    margin-top: -8% !Important;
 }
 
 select {
-    margin-top: -4% !Important;
+    margin-top: -7% !Important;
 }
 
 
@@ -65,6 +65,26 @@ select {
 }
 
 @media (max-width: 575.98px) {
+
+    .night-usage-outer-container {
+        padding-left: 6%;
+    }
+
+    .national-average {
+        font-size: 0.8rem;
+    }
+
+    .night-usage-container {
+        margin-top: 8px;
+    }
+
+    .per-day {
+        margin-left: -8px;
+    }
+
+    .control-padding {
+        margin-top: 8px !important;
+    }
 
     .per-container {
         margin-top: 4px;
@@ -95,7 +115,7 @@ select {
 }
 
 @media (min-width: 575.99px) {
-    
+
     .d-hide {
         display: none !Important;
     }
@@ -121,10 +141,13 @@ select {
 
 
 @media (min-width: 1200px) {
-    
+
+    .custom-offset {
+        margin-left: 15% !Important;
+    }
     
     input, select {
-        margin-top: -8% !Important;
+        margin-top: -5% !Important;
     }
 
     .custom-radio {
@@ -137,11 +160,11 @@ select {
     }
     
     .per-container {
-        margin-left: -2%;
+
     }
     
     .duration-selector {
-        margin-left: -2.5%;
+        margin-left: -1.7%;
         margin-top: 0% !important;
     }
 }
@@ -150,7 +173,15 @@ select {
 
 
 
+#electricity-usage {
+    margin-top: 20px;
+}
+
+.radio-text {
+    margin-top: -4px;
+}
 
 
-
-
+.radio-container {
+    margin-top: 5px;
+}
