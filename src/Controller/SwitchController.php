@@ -204,6 +204,7 @@ class SwitchController extends AbstractController
                 'payment_methods' => ($currentStep === 3 ? $switchManager->getPaymentMethods(
                     true
                 ) : null),
+                'quote' => $quote
             ]
         );
     }

@@ -58,469 +58,434 @@
 
 
                 <!-- first question -->
-                <div class="row question-row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12 question-title">
-                                <h5>How much gas do you use? (show if gas or gas and electricity picked on form-1)</h5>
-                                <p>Please select one of the options</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="quote_step_two[selectedGasSpend]"
-                                           value="1"
-                                           class="custom-control-input"
-                                           {% if form.selectedGasSpend.vars.data == true %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio1"></label>
+                {% if quote.gasElectricityType == 1 or quote.gasElectricityType == 2 %}
+                    <div class="row question-row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 question-title">
+                                    <h5>How much gas do you use?</h5>
+                                    <p>Please select one of the options</p>
                                 </div>
                             </div>
 
-                            <div class="col-5 col-md-2 col-lg-3">
-                                <h6 class="bold">I spend</h6>
-                            </div>
+                            <div class="row">
 
-                            <div class="col-5 col-md-3 col-lg-3 num-input">
-                                <div class="form-group">
-                                    {{ form_widget(form.gasMoneySpend) }}
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="quote_step_two[selectedGasSpend]"
+                                               value="1"
+                                               class="custom-control-input"
+                                               {% if form.selectedGasSpend.vars.data == true %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio1"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-5 col-md-2 col-lg-3">
+                                    <h6 class="bold">I spend</h6>
+                                </div>
+
+                                <div class="col-5 col-md-3 col-lg-3 num-input">
+                                    <div class="form-group">
+                                        {{ form_widget(form.gasMoneySpend) }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-1 d-hide"></div>
+                                <div class="col-3 col-md-1 col-lg-1 per-container">
+                                    <h6 class="bold form-per">per</h6>
+                                </div>
+
+                                <div class="col-7 col-md-4 col-lg-3 duration-selector">
+                                    {{ form_widget(form.gasMoneyPerType) }}
                                 </div>
                             </div>
 
+                            <div class="row form-split">
 
-                            <div class="col-1 d-hide"></div>
-                            <div class="col-3 col-md-1 col-lg-1 per-container">
-                                <h6 class="bold form-per">per</h6>
-                            </div>
-
-                            <div class="col-7 col-md-4 col-lg-3 duration-selector">
-                                {{ form_widget(form.gasMoneyPerType) }}
-                            </div>
-                        </div>
-
-                        <div class="row form-split">
-
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="quote_step_two[selectedGasSpend]"
-                                           value="0"
-                                           class="custom-control-input"
-                                           {% if form.selectedGasSpend.vars.data == false %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio2"></label>
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="quote_step_two[selectedGasSpend]"
+                                               value="0"
+                                               class="custom-control-input"
+                                               {% if form.selectedGasSpend.vars.data == false %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio2"></label>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-3 col-md-2 col-lg-3">
-                                <h6 class="bold">I use</h6>
-                            </div>
-
-                            <div class=" col-7 col-md-3 num-input">
-                                <div class="form-group">
-                                    {{ form_widget(form.gasUseKWH) }}
+                                <div class="col-3 col-md-2 col-lg-3">
+                                    <h6 class="bold">I use</h6>
                                 </div>
-                            </div>
 
-
-                            <div class="col-1 d-hide"></div>
-                            <div class="col-10 col-md-6 per-container">
-                                <h6 class="bold per-year">per year</h6>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- end of first question -->
-
-
-                <!-- second question -->
-                <div class="row question-row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12 question-title">
-                                <h5>How much electricity do you use? (hide if economy 7 meter is selected or just gas is picked on form-1)</h5>
-                                <p>Please select one of the options</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio3" name="quote_step_two[selectedElecSpend]"
-                                           class="custom-control-input" value="1"
-                                           {% if form.selectedElecSpend.vars.data == true %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio3"></label>
+                                <div class=" col-7 col-md-3 num-input">
+                                    <div class="form-group">
+                                        {{ form_widget(form.gasUseKWH) }}
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="col-5 col-md-2 col-lg-3">
-                                <h6 class="bold">I spend</h6>
-                            </div>
 
-                            <div class="col-5 col-md-3 col-lg-3 num-input">
-                                <div class="form-group">
-                                    {{ form_widget(form.elecMoneySpend) }}
+                                <div class="col-1 d-hide"></div>
+                                <div class="col-10 col-md-6 per-container">
+                                    <h6 class="bold per-year">per year</h6>
                                 </div>
-                            </div>
 
-
-                            <div class="col-1 d-hide"></div>
-                            <div class="col-3 col-md-1 col-lg-1 per-container">
-                                <h6 class="bold form-per">per</h6>
-                            </div>
-
-                            <div class="col-7 col-md-4 col-lg-3 duration-selector">
-                                {{ form_widget(form.elecMoneyPerType) }}
-                            </div>
-                        </div>
-
-                        <div class="row form-split">
-
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio4" name="quote_step_two[selectedElecSpend]" value="0"
-                                           class="custom-control-input"
-                                           {% if form.selectedElecSpend.vars.data == false %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio4"></label>
-                                </div>
-                            </div>
-
-                            <div class="col-3 col-md-2 col-lg-3">
-                                <h6 class="bold">I use</h6>
-                            </div>
-
-                            <div class="col-7 col-md-3 num-input">
-                                <div class="form-group">
-                                    {{ form_widget(form.elecUseKWH) }}
-                                </div>
-                            </div>
-
-
-                            <div class="col-1 d-hide"></div>
-                            <div class="col-10 col-md-6 per-container">
-                                <h6 class="bold per-year">per year</h6>
                             </div>
 
                         </div>
 
                     </div>
+                    <!-- end of first question -->
+                {% endif %}
 
-                </div>
-                <!-- end of second question -->
-
-
-
-
-                <!-- second question -->
-                <div class="row question-row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12 question-title">
-                                <h5>How much electricity do you use? (show if economy 7 meter is selected and electricity or gas and electricity on form-1)</h5>
-                                <p>Please select one of the options</p>
+                {% if (quote.gasElectricityType == 1 or quote.gasElectricityType == 3) and quote.economyMeter == false %}
+                    <!-- second question -->
+                    <div class="row question-row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 question-title">
+                                    <h5>How much electricity do you use?</h5>
+                                    <p>Please select one of the options</p>
+                                </div>
                             </div>
+
+                            <div class="row">
+
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio3" name="quote_step_two[selectedElecSpend]"
+                                               class="custom-control-input" value="1"
+                                               {% if form.selectedElecSpend.vars.data == true %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio3"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-5 col-md-2 col-lg-3">
+                                    <h6 class="bold">I spend</h6>
+                                </div>
+
+                                <div class="col-5 col-md-3 col-lg-3 num-input">
+                                    <div class="form-group">
+                                        {{ form_widget(form.elecMoneySpend) }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-1 d-hide"></div>
+                                <div class="col-3 col-md-1 col-lg-1 per-container">
+                                    <h6 class="bold form-per">per</h6>
+                                </div>
+
+                                <div class="col-7 col-md-4 col-lg-3 duration-selector">
+                                    {{ form_widget(form.elecMoneyPerType) }}
+                                </div>
+                            </div>
+
+                            <div class="row form-split">
+
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio4" name="quote_step_two[selectedElecSpend]"
+                                               value="0"
+                                               class="custom-control-input"
+                                               {% if form.selectedElecSpend.vars.data == false %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio4"></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 col-md-2 col-lg-3">
+                                    <h6 class="bold">I use</h6>
+                                </div>
+
+                                <div class="col-7 col-md-3 num-input">
+                                    <div class="form-group">
+                                        {{ form_widget(form.elecUseKWH) }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-1 d-hide"></div>
+                                <div class="col-10 col-md-6 per-container">
+                                    <h6 class="bold per-year">per year</h6>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="row">
+                    </div>
+                    <!-- end of second question -->
+                {% endif %}
 
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio5" name="abc"
-                                           class="custom-control-input" value="1"
-                                           {% if form.selectedElecSpend.vars.data == true %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio3"></label>
+                {% if (quote.gasElectricityType == 1 or quote.gasElectricityType == 3) and quote.economyMeter == true %}
+                    <!-- second question -->
+                    <div class="row question-row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 question-title">
+                                    <h5>How much electricity do you use?</h5>
+                                    <p>Please select one of the options</p>
                                 </div>
                             </div>
 
-                            <div class="col-4 col-md-2 col-lg-2">
-                                <h6 class="bold">I use</h6>
-                            </div>
+                            <div class="row">
 
-                            <div class="col-6 col-md-3 col-lg-2 num-input">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="kWH">
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio5" name="abc"
+                                               class="custom-control-input" value="1"
+                                               {% if form.selectedElecSpend.vars.data == true %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio3"></label>
+                                    </div>
                                 </div>
-                            </div>
+
+                                <div class="col-4 col-md-2 col-lg-2">
+                                    <h6 class="bold">I use</h6>
+                                </div>
+
+                                <div class="col-6 col-md-3 col-lg-2 num-input">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="" placeholder="kWH">
+                                    </div>
+                                </div>
 
 
+                                <div class="col-10 offset-2 offset-sm-0 col-md-6 col-lg-5 per-container">
+                                    <h6 class="bold per-year per-day">per year in the day</h6>
+                                </div>
 
-                            <div class="col-10 offset-2 offset-sm-0 col-md-6 col-lg-5 per-container">
-                                <h6 class="bold per-year per-day">per year in the day</h6>
-                            </div>
+                                <div class="col-12 col-md-2 col-lg-3">
 
-                            <div class="col-12 col-md-2 col-lg-3">
+                                </div>
+                                <div class="col-12">
+                                    <div class="row night-usage-outer-container">
+                                        <div class="col-9 col-md-3 col-lg-2 offset-md-3 offset-1 num-input custom-offset">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control control-padding" id=""
+                                                       placeholder="kWH">
+                                            </div>
+                                        </div>
 
-                            </div>
-                            <div class="col-12">
-                                <div class="row night-usage-outer-container">
-                                    <div class="col-9 col-md-3 col-lg-2 offset-md-3 offset-1 num-input custom-offset">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control control-padding" id="" placeholder="kWH">
+
+                                        <div class="col-1 d-hide"></div>
+                                        <div class="col-10 col-md-6 col-lg-5 offset-1 offset-sm-0 per-container">
+                                            <h6 class="bold per-year">per year at night</h6>
                                         </div>
                                     </div>
+                                </div>
 
+                            </div>
 
-                                    <div class="col-1 d-hide"></div>
-                                    <div class="col-10 col-md-6 col-lg-5 offset-1 offset-sm-0 per-container">
-                                        <h6 class="bold per-year">per year at night</h6>
+                            <div class="row form-split">
+
+                                <div class="col-1">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio6" name="abc" value="0"
+                                               class="custom-control-input"
+                                               {% if form.selectedElecSpend.vars.data == false %}checked{% endif %}>
+                                        <label class="custom-control-label" for="customRadio4"></label>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
-
-                        <div class="row form-split">
-
-                            <div class="col-1">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio6" name="abc" value="0"
-                                           class="custom-control-input"
-                                           {% if form.selectedElecSpend.vars.data == false %}checked{% endif %}>
-                                    <label class="custom-control-label" for="customRadio4"></label>
+                                <div class="col-4 col-md-2 col-lg-3">
+                                    <h6 class="bold">I use</h6>
                                 </div>
-                            </div>
 
-                            <div class="col-4 col-md-2 col-lg-3">
-                                <h6 class="bold">I use</h6>
-                            </div>
-
-                            <div class="col-6 col-md-3 col-lg-2 num-input">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="£">
+                                <div class="col-6 col-md-3 col-lg-2 num-input">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="" placeholder="£">
+                                    </div>
                                 </div>
-                            </div>
 
 
-                            <div class="col-1 d-hide"></div>
-                            <div class="col-4 col-md-1 col-lg-1 per-container">
-                                <h6 class="bold form-per">per</h6>
-                            </div>
+                                <div class="col-1 d-hide"></div>
+                                <div class="col-4 col-md-1 col-lg-1 per-container">
+                                    <h6 class="bold form-per">per</h6>
+                                </div>
 
-                            <div class="col-6 col-md-4 col-lg-2 duration-selector">
-                                <select class="form-control selector">
-                                    <option>week</option>
-                                    <option>month</option>
-                                    <option>year</option>
-                                </select>
-                            </div>
+                                <div class="col-6 col-md-4 col-lg-2 duration-selector">
+                                    <select class="form-control selector">
+                                        <option>week</option>
+                                        <option>month</option>
+                                        <option>year</option>
+                                    </select>
+                                </div>
 
 
+                                <div class="col-12">
+                                    <div class="row night-usage-container">
+                                        <div class="col-1 d-hide"></div>
+                                        <div class="col-5 col-md-2 col-lg-2 offset-md-1 offset-lg-1 per-container">
+                                            <h6 class="bold form-per">Night usage</h6>
+                                        </div>
 
-                            <div class="col-12">
-                                <div class="row night-usage-container">
-                                    <div class="col-1 d-hide"></div>
-                                    <div class="col-5 col-md-2 col-lg-2 offset-md-1 offset-lg-1 per-container">
-                                        <h6 class="bold form-per">Night usage</h6>
-                                    </div>
+                                        <div class="col-5 col-md-3 col-lg-2 duration-selector">
+                                            <select class="form-control selector">
+                                                <option>0%</option>
+                                                <option>5%</option>
+                                                <option>10%</option>
+                                                <option>15%</option>
+                                                <option>20%</option>
+                                                <option>25%</option>
+                                                <option>30%</option>
+                                                <option>35%</option>
+                                                <option>40%</option>
+                                                <option>45%</option>
+                                                <option>50%</option>
+                                                <option>55%</option>
+                                                <option>60%</option>
+                                                <option>65%</option>
+                                                <option>70%</option>
+                                                <option>75%</option>
+                                                <option>80%</option>
+                                                <option>85%</option>
+                                                <option>90%</option>
+                                                <option>95%</option>
+                                                <option>100%</option>
+                                            </select>
+                                        </div>
 
-                                    <div class="col-5 col-md-3 col-lg-2 duration-selector">
-                                        <select class="form-control selector">
-                                            <option>0%</option>
-                                            <option>5%</option>
-                                            <option>10%</option>
-                                            <option>15%</option>
-                                            <option>20%</option>
-                                            <option>25%</option>
-                                            <option>30%</option>
-                                            <option>35%</option>
-                                            <option>40%</option>
-                                            <option>45%</option>
-                                            <option>50%</option>
-                                            <option>55%</option>
-                                            <option>60%</option>
-                                            <option>65%</option>
-                                            <option>70%</option>
-                                            <option>75%</option>
-                                            <option>80%</option>
-                                            <option>85%</option>
-                                            <option>90%</option>
-                                            <option>95%</option>
-                                            <option>100%</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-10 offset-2 offset-sm-0 col-md-6 col-lg-6">
-                                        <p class="national-average">just use 42% if you're not sure(national average)</p>
+                                        <div class="col-10 offset-2 offset-sm-0 col-md-6 col-lg-6">
+                                            <p class="national-average">use 42% if you're not sure (national
+                                                average)</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
-                </div>
-                <!-- end of second question -->
-
-
-
-
-
+                    <!-- end of second question -->
+                {% endif %}
 
                 <div class="row">
                     <div class="col-12">
-                        <h6>Not sure on your usage? <span>click here</span></h6>
+                        <h6>Not sure on your usage? <a href="javascript:void(0)" class="click_not_sure">click here</a>
+                        </h6>
                     </div>
                 </div>
 
-
-
                 <!-- first question -->
-                <div class="row question-row">
+                <div class="row question-row hide_not_sure" style="display: none;">
                     <div class="col-12">
                         <div class="row">
                             <div class="col-12 question-title">
-                                <h5>Simple usage calculator (show if they click "not sure on your usage")</h5>
+                                <h5>Simple usage calculator</h5>
                             </div>
                         </div>
 
-                        <div class="row">
-
-                            <div class="col-12 col-md-6 col-lg-3">
-                                <h6>Select your gas usage level (show only if they select "gas and electricity" or "gas only" on FORM-1</h6>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-7 radio-container">
-
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio66" name="customRadio10" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio66"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">Low (small flat)</p>
-                                    </div>
+                        {% if quote.gasElectricityType == 1 or quote.gasElectricityType == 2 %}
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-3">
+                                    <h6>Select your gas usage level (show only if they select "gas and electricity" or
+                                        "gas
+                                        only" on FORM-1</h6>
                                 </div>
+                                <div class="col-12 col-md-6 col-lg-7 radio-container">
 
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio77" name="customRadio10" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio77"></label>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio66" name="customRadio10"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio66"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">Low (small flat)</p>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">Medium (house or large flat)</p>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio88" name="customRadio10" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio88"></label>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio77" name="customRadio10"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio77"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">Medium (house or large flat)</p>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">High (large house)</p>
-                                    </div>
-                                </div>
 
-                            </div>
-
-                        </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row" id="electricity-usage">
-
-                            <div class="col-12 col-md-6 col-lg-3">
-                                <h6>Select your electricity usage level (only show if they select "gas and electricity" or electricity only on form-1</h6>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-7 radio-container">
-
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio22" name="customRadio043" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio22"></label>
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio88" name="customRadio10"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio88"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">High (large house)</p>
                                         </div>
                                     </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">Low (small flat)</p>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio33" name="customRadio043" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio33"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">Medium (house or large flat)</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio42" name="customRadio043" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio42"></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <p class="radio-text">High (large house)</p>
-                                    </div>
                                 </div>
 
                             </div>
+                        {% endif %}
 
-                        </div>
+                        {% if quote.gasElectricityType == 1 or quote.gasElectricityType == 3 %}
+                            <div class="row" id="electricity-usage">
 
+                                <div class="col-12 col-md-6 col-lg-3">
+                                    <h6>Select your electricity usage level (only show if they select "gas and
+                                        electricity"
+                                        or electricity only on form-1</h6>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-7 radio-container">
 
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio22" name="customRadio043"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio22"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">Low (small flat)</p>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio33" name="customRadio043"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio33"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">Medium (house or large flat)</p>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio42" name="customRadio043"
+                                                       class="custom-control-input" checked>
+                                                <label class="custom-control-label" for="customRadio42"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="radio-text">High (large house)</p>
+                                        </div>
+                                    </div>
 
+                                </div>
+
+                            </div>
+                        {% endif %}
 
                     </div>
 
                 </div>
                 <!-- end of first question -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <hr/>
 
                 <!-- third question -->
                 <div class="row question-row">
@@ -537,7 +502,6 @@
                     </div>
 
                 </div>
-
 
 
                 <!-- end of third question -->
@@ -594,4 +558,9 @@
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/forms.js') }}"></script>
+    <script>
+        $('.click_not_sure').on('click', function () {
+            $('.hide_not_sure').show();
+        })
+    </script>
 {% endblock %}
